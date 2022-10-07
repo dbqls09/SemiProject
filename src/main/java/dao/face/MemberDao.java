@@ -32,5 +32,10 @@ public interface MemberDao {
 	public int insert(Connection conn, Member param);
 
 //	int selectCntMemberByUser_idUser_pw(Connection conn, Member member);
+	
+	
+
+	
+
 
 }

@@ -115,5 +115,15 @@ public class MemberDaoImpl implements MemberDao {
 		return result;
 
 	}
+	
+	@Override
+	public Member selectMemberByUser_id(Connection conn, Member member) {
+		
+		
+		return null;
+	}
+	
+
+	
 
 }

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dto.Member;
-import service.MemberService;
-import service.MemberServiceImpl;
+import service.face.MemberService;
+import service.impl.MemberServiceImpl;
 
 @WebServlet("/movie/join")
 public class JoinController extends HttpServlet {
@@ -21,7 +21,7 @@ public class JoinController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		req.getRequestDispatcher("/WEB-INF/views/join.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/member/join.jsp").forward(req, resp);
 	}
 	
 	@Override
@@ -34,7 +34,7 @@ public class JoinController extends HttpServlet {
 		//회원가입 처리
 		memberService.join(member);
 		//메인으로 리다이렉트
-		resp.sendRedirect("/movie/main");
+		resp.sendRedirect("/main");
 		
 		
 	
