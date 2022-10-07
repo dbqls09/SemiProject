@@ -15,7 +15,7 @@
 
 <section>
 <div class="top" style="text-align:left"></div>
-<!-- 사이드 메뉴입니다. -->
+<!-- 사이드 메뉴입니다. --> 
 
 <div class="rightcolumn">
  <div class="home1"><h3>마이페이지</h3></div>
