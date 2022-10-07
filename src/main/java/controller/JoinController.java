@@ -12,7 +12,7 @@ import dto.Member;
 import service.face.MemberService;
 import service.impl.MemberServiceImpl;
 
-@WebServlet("/movie/join")
+@WebServlet("/main/join")
 public class JoinController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,6 +33,7 @@ public class JoinController extends HttpServlet {
 		
 		//회원가입 처리
 		memberService.join(member);
+		
 		//메인으로 리다이렉트
 		resp.sendRedirect("/main");
 		
