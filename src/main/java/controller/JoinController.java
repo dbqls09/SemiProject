@@ -28,7 +28,7 @@ public class JoinController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		
-		//회운가입 전달 파라미터
+		//회원가입 전달 파라미터
 		Member member = memberService.getJoinMember(req);
 		
 		//회원가입 처리
