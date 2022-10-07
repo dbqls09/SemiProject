@@ -37,6 +37,8 @@ public class JoinController extends HttpServlet {
 		resp.sendRedirect("/movie/main");
 		
 		
+	
+		
 		
 	}
 	
