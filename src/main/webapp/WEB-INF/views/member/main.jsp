@@ -53,7 +53,7 @@
 			<div class="nav-item">메뉴</div>
 			<div class="nav-item">메뉴</div>
 			<div class="nav-item"> <button onclick="location.href='/main/login'">로그인</button> </div>
-			<div class="nav-item"> <button>회원가입</button> </div>
+			<div class="nav-item"> <button onclick="location.href='/main/join'">회원가입</button> </div>
 		</div>
 
 	</div>
