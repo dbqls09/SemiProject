@@ -22,8 +22,8 @@
 <div class="homeBox">
 
     <div class="home2">
-      <div class="h" onclick="location='customer.jsp'">내 정보 수정 및 탈퇴</div>
-      <div class="notify" onclick="location='customer.jsp'">예매 조회 및 취소</div>
+      <div class="h" onclick="location='mypageupdate.jsp'">내 정보 수정 및 탈퇴</div>
+      <div class="notify" onclick="location='mypage.jsp'">예매 조회 및 취소</div>
     </div>
     
     <div class="home3">
@@ -35,15 +35,8 @@
 </div>
 
 <div class="board">
-   <table style="margin-top:50px;">
-   <caption><h2>내 정보</h2></caption>
-	<colgroup>
-		<col width="80%"/>
-		<col width="*"/>
-	</colgroup>	
-		
-		
-	</table>
+	<h1>내 정보 수정</h1>
+
 </div>
 
 </section>
