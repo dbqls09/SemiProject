@@ -33,9 +33,6 @@ public interface MemberService {
 	public Member getParam(HttpServletRequest req);
 	
 	
-	
-	
-	
 	/**
 	 * 회원가입 정보 추출
 	 * 

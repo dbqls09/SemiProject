@@ -8,7 +8,7 @@
 
 <script type="text/javascript">
 
-$(documet).ready(function(){
+$(document).ready(function(){
 	$("#btnJoin").click(function(){
 		this.parents("form").submit();
 	})
@@ -125,7 +125,7 @@ body {
 </head>
 <body>
 
-<form action="/movie/join" method="POST" class="joinForm">
+<form action="/member/join" method="POST" class="joinForm">
       <h2>회원가입</h2>
       
       <div class="textForm">

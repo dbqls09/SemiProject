@@ -4,79 +4,140 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>KLCINEMA</title>
 <style type="text/css">
+
 .nav{
-	height:70px;
-	border-bottom : 1px solid black;
+	height:150px;
+	border-bottom : 1px solid rgb(144, 144, 144);
 	display : flex;
-	align-items : center;
+ 	align-items : flex-start;
+ 	margin: auto;
 }
+
 .nav-right-items{
+/* 	text-decoration: none; */
+	font-size: 13px;
+	color: rgb(144, 144, 144);
 	display:flex;
-	margin-left:auto;
+	margin-left: auto;
+	margin-right: auto;
 }
+
 .nav-item{
-	margin-left : 10px;
+	text-decoration: none;
+	color: rgb(144, 144, 144);
+	border-right: 1px solid rgba(255, 255, 255, 0.5);
+/* 	margin-left : 10px; */
+	padding-right: 13px;
+	padding-left: 13px;
 }
+
 .title{
-	margin-left  : 600px;
-	font-size:40px;
-	font-weight:bold;
+	margin-top: 70px;
+ 	margin-left: 730px;
+ 	margin-right: auto; 
+	justify-content: center;
+ 	align-items: center; 
+ 	display: flex;
+	font-size: 40px;
+	font-weight: bold;
+	color: rgb(255, 250, 240);
 }
+
+.main {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
 .movie{
 	display : flex;
+ 	margin: 100px;
 }
+
 .movie-item{
-	width:300px;
-	height:300px;
-	border:1px solid black;
-	margin:60px;	
+/* 	float: left; */
+	width: 1000px;
+	height: 1000px;
+/* 	border: 1px solid white; */
+ 	margin: 40px;	 
 }
+
 .movie-item-button{
-	padding:.5rem 1rem;
+/* 	padding:.5rem 1rem; */
 	font-size:1.25rem;
 	line-heigth:1.5;
-	margin-left  : 170px;
+	margin: auto;
 }
+
+#btn1 {
+	border: 0px;
+	background-color: none;
+	color: white;
+	padding: 10px 10px;
+	font-size: 15px;
+	border-radius: 5px;
+    font-family: Malgun Gothic;
+}
+
 </style>
 </head>
-<body>
+
+<body bgcolor="#050040">
 	<div class="nav">
-		<div class="title">
-			TITLE
-		</div>
+		<div class="title">KLC📽️INEMA</div>
 
 		<div class="nav-right-items">
-			<div class="nav-item">메뉴</div>
-			<div class="nav-item">메뉴</div>
-			<div class="nav-item">메뉴</div>
-			<div class="nav-item">메뉴</div>
-			<div class="nav-item"> <button onclick="location.href='/main/login'">로그인</button> </div>
-			<div class="nav-item"> <button onclick="location.href='/main/join'">회원가입</button> </div>
+			<a class="nav-item" href="./main/login">로그인</a> 
+			<a class="nav-item" href="./main/join">회원가입</a> 
+			<a class="nav-item" href="#">마이페이지</a> 
+			<a class="nav-item" href="#">고객센터</a> 
+			<a class="nav-item" href="#" style="border-right: none;">빠른예매</a>
+			<!-- 			<a class="nav-item"><button onclick="location.href='/main/join'">회원가입</button> </a> -->
 		</div>
 
 	</div>
+	
 
 	<div class="main">
+		<div class="movie" style="float: left">
+		
+				<div>
+				<span class="movie-item"></span>
+					<img src="resources/image/HarryPotter.jpg" height="400px;" width="270px">
+					<div id="btn1">
+						<button id="movie-item-button">바로 예매</button>
+					</div>
+			    </div>
 
+			    <div>
+				<span class="movie-item"></span> 
+					<img src="resources/image/Cooperation.jpg" height="400px;" width="270px">
+					<div id="btn1">
+						<button id="movie-item-button">바로 예매</button>
+					</div>
+				</div>
 
+				<div>
+				<span class="movie-item"></span> 
+					<img src="resources/image/LifeIsBeautiful" height="400px;" width="270px">
+					<div id="btn1">
+						<button id="movie-itme-button">바로 예매</button>
+					</div>
+				</div>
 
+				<div>
+				<span class="movie-item"></span> 
+					<img src="resources/image/Avatar.jpg" height="400px" width="270px">
+					<div id="btn1">
+						<button id="movie-item-button">바로 예매</button>
+					</div>
+				</div>
 
-	<div class="movie">
-	<div>
-		<div class="movie-item">1</div> 
-		<div> <button class="movie-item-button">click</button> </div>
-	</div>	
-		<div class="movie-item">1</div>
-		<div class="movie-item">1</div>
-
-
-
+		</div>
 	</div>
 
 
 
-	</div>
-</body>
-</html>
+	<%@ include file="../layout/footer.jsp" %>
