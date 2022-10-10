@@ -123,7 +123,7 @@ body {
 
 </style>
 </head>
-<body>
+<body bgcolor="#050040">
 
 <form action="/member/join" method="POST" class="joinForm">
       <h2>회원가입</h2>

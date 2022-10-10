@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KLCINEMA</title>
+<title>KLC📽️INEMA</title>
 <style type="text/css">
 
 .nav{
@@ -51,6 +51,10 @@
 	display: flex;
 }
 
+.photobox {
+	
+}
+
 .movie{
 	display : flex;
  	margin: 100px;
@@ -69,6 +73,7 @@
 	font-size:1.25rem;
 	line-heigth:1.5;
 	margin: auto;
+	relative: position;
 }
 
 #btn1 {
@@ -79,6 +84,10 @@
 	font-size: 15px;
 	border-radius: 5px;
     font-family: Malgun Gothic;
+}
+
+img {
+	
 }
 
 </style>
@@ -103,7 +112,7 @@
 	<div class="main">
 		<div class="movie" style="float: left">
 		
-				<div>
+				<div class="photobox">
 				<span class="movie-item"></span>
 					<img src="resources/image/HarryPotter.jpg" height="400px;" width="270px">
 					<div id="btn1">
@@ -111,7 +120,7 @@
 					</div>
 			    </div>
 
-			    <div>
+			    <div class="photobox">
 				<span class="movie-item"></span> 
 					<img src="resources/image/Cooperation.jpg" height="400px;" width="270px">
 					<div id="btn1">
@@ -119,15 +128,15 @@
 					</div>
 				</div>
 
-				<div>
+				<div class="photobox">
 				<span class="movie-item"></span> 
-					<img src="resources/image/LifeIsBeautiful" height="400px;" width="270px">
+					<img src="resources/image/LifeIsBeautiful.jpg" height="400px;" width="270px">
 					<div id="btn1">
 						<button id="movie-itme-button">바로 예매</button>
 					</div>
 				</div>
 
-				<div>
+				<div class="photobox">
 				<span class="movie-item"></span> 
 					<img src="resources/image/Avatar.jpg" height="400px" width="270px">
 					<div id="btn1">

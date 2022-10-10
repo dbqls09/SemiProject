@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 
 <style type="text/css">
+
 .whole {
 	margin : 300px;
 	margin-top : 100px;
@@ -31,36 +32,36 @@ span {
 </style>
 
 </head>
-<body>
+<body bgcolor="#050040">
 
 <div class="whole">
 <form action="" method="post">
 
 	<div class="title">
-		<h1>LOGIN</h1>
+		<h1 style="color: white;">LOGIN</h1>
 	</div>
 
 	<br>
 
 	<div>
 		<div class="inputid">
-			<label style="margin-left:10px;">아이디<input type="text" name="id" style="margin-left: 15px;"></label>
+			<label style="margin-left:10px; color: white;">아이디<input type="text" name="id" style="margin-left: 15px;"></label>
 		</div>
 
 		<br>
 
 		<div class="inputpw">
-			<label>비밀번호<input type="text" name="pw"></label>
+			<label style="color: white;">비밀번호<input type="text" name="pw"></label>
 		</div>
 
 		<div class="chkbox">
 			<input type="checkbox" id="chk1" name="chk" >
-			<label for="ck1">아이디 저장</label>
+			<label for="ck1" style="color: white">아이디 저장</label>
 		</div>
 
 		<br>
 
-		<div class="option1">
+		<div class="option1" style="color: white">
 			<span>ID/PW 찿기</span>
 			<span>|</span>
 			<span>회원가입</span>
