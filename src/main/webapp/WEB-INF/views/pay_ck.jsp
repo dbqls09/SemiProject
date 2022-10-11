@@ -8,5 +8,12 @@
 </head>
 <body>
 
+<h1>KLCinema</h1>
+<br><br><br>
+
+<h2>예매 완료되었습니다</h2>
+
+
+
 </body>
 </html>
