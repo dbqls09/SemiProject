@@ -15,7 +15,7 @@
 
 <div class="payment-wrapper">
 
-<div class="col-xs-6 col-sm-4">
+<div class="col-xs-6">
 
 <h3>관람권 및 할인적용</h3>
 <div>
@@ -70,7 +70,7 @@
 	</div>
 	
 	<div class="btn-group">
-	<button type="button" class="btn">이전</button>
+	<button onclick="location.href='<%=request.getContextPath() %>/seat'" class="btn">이전</button>
 	<button type="button" class="btn">다음</button>
 	</div>
 	
