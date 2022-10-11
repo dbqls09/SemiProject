@@ -71,7 +71,7 @@
 	
 	<div class="btn-group">
 	<button type="button" class="btn">이전</button>
-	<button type="button" class="btn" onclick="location.href='views/pay_ck.jsp'">결제</button>
+	<button type="button" class="btn" onclick="location.href='./views/pay_ck.jsp'">결제</button>
 	</div>
 	
 </div>
