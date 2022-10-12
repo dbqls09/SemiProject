@@ -89,7 +89,7 @@ public class MemberDaoImpl implements MemberDao {
 	public int insert(Connection conn, Member param) {
 
 		String sql = "";
-		sql += "INSERT INTO member ( user_id, user_pw, user_name, user_birth, user_email, user_phone, )";
+		sql += "INSERT INTO member";
 		sql += " VALUES ( ?, ?, ?, ?, ?, ?) ";
 
 		//INSERT 수행 결과 변수
@@ -122,8 +122,6 @@ public class MemberDaoImpl implements MemberDao {
 		
 		return null;
 	}
-	
 
-	
 
 }

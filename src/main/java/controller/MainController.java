@@ -13,9 +13,7 @@ import dto.Member;
 import service.face.MemberService;
 import service.impl.MemberServiceImpl;
 
-/**
- * Servlet implementation class MainController
- */
+
 @WebServlet("/main")
 public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
