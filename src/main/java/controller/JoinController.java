@@ -29,7 +29,7 @@ public class JoinController extends HttpServlet {
 	
 		
 		//회원가입 전달 파라미터
-		Member member = memberService.getJoinMember(req);
+		Member member = memberService.getJoinMember(req);	
 		
 		//회원가입 처리
 		memberService.join(member);

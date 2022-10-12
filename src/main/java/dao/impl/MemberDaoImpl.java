@@ -19,8 +19,8 @@ public class MemberDaoImpl implements MemberDao {
 
 		String sql = "";
 		sql += "SELECT count(*) cnt FROM member";
-		sql += " WHERE user_id = ?";
-		sql += "    AND user_pw = ?";
+		sql += " WHERE 'user_id' = ?";
+		sql += "    AND 'user_pw' = ?";
 
 		int cnt = 0;
 
@@ -51,8 +51,8 @@ public class MemberDaoImpl implements MemberDao {
 	public Member selectMemberByUser_idUser_pw(Connection conn, Member member) {
 
 		String sql = "";
-		sql += "SELECT user_id, user_pw FROM member";
-		sql += " WHERE user_id = ?";
+		sql += "SELECT 'user_id', 'user_pw' FROM member";
+		sql += " WHERE 'user_id' = ?";
 
 		Member result = null;
 
@@ -118,9 +118,44 @@ public class MemberDaoImpl implements MemberDao {
 	
 	@Override
 	public Member selectMemberByUser_id(Connection conn, Member member) {
+
+		String sql = "";
+		sql += "SELECT * FROM member";
+		sql += " WHERE 'userid' = ?";
+
+		Member result = null;
+
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, member.getUser_id());
+
+			rs = ps.executeQuery();
+
+			while(rs.next()) {
+				result = new Member();
+
+				result.setUser_id(rs.getString("User_id"));
+				result.setUser_pw(rs.getString("User_pw"));
+				result.setUser_name(rs.getString("User_name"));
+				result.setUser_birth(rs.getString("User_birth"));
+				result.setUser_email(rs.getString("User_email"));
+				result.setUser_phone(rs.getString("User_phone"));
+
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			JDBCTemplate.close(ps);
+			JDBCTemplate.close(ps);
+		}
+
+		return result;
+
+	
 		
-		
-		return null;
 	}
 
 

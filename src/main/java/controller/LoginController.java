@@ -40,6 +40,11 @@ public class LoginController extends HttpServlet {
 
 		//전달파라미터 로그인 정보 얻어오기
 		Member member = memberService.getLoginMember(req);
+		
+		System.out.println(req.getParameter("user_id"));
+		System.out.println(req.getParameter("user_pw"));
+		
+		System.out.println(req.getParameter("member"));
 
 		//로그인 인증
 		boolean isLogin = memberService.login(member);
@@ -60,19 +65,21 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("user_birth", member.getUser_birth());
 			session.setAttribute("user_email", member.getUser_email());
 			session.setAttribute("user_phone", member.getUser_phone());
-
 		}
 
-		//로그인 페이지로 리다이렉트
-		resp.sendRedirect("/main");
+		//로그인 성공 페이지로 리다이렉트
+		resp.sendRedirect("/main/login/success");
 
-		return;
-
+//		return;
+		System.out.println(req.getParameter("user_id"));
+		System.out.println(req.getParameter("user_pw"));
+		
+		System.out.println(req.getParameterValues("member"));
 
 
 	}
 
-
+	
 
 
 }
