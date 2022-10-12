@@ -4,9 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>예매하기</title>
 </head>
 <body>
+
+<h1>KLCinema</h1>
+<br><br><br>
+
+<h2>예매하기</h2>
+
+
+
+
 
 </body>
 </html>

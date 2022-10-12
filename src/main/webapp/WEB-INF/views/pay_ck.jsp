@@ -4,14 +4,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>예매확인</title>
+
+<style type="text/css">
+
+.main {
+ display: flex;
+ justify-content: center;
+}
+
+.text2 {
+ display: flex;
+ justify-content: center;
+}
+
+
+</style>
+
 </head>
 <body>
 
-<h1>KLCinema</h1>
-<br><br><br>
+<div class="main">
+	<h1>KLCinema</h1>
+</div>
+<br>
+<div class="text2">
+	<h3>예매 완료되었습니다</h3>
+</div>
 
-<h2>예매 완료되었습니다</h2>
+<div class="body1">
+	<a>예매정보</a>
+	<button class="recancel">예매취소</button>
+</div>
 
 
 
