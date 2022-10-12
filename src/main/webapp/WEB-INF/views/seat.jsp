@@ -27,10 +27,34 @@
   display: flex;
 }
 
+.seat.selected {
+  background-color: #6feaf6;
+}
+
 </style>
 
 </head>
 <body>
+
+<div class="movie-container">
+      <select id="movie">
+        <option value="15000">성인</option>
+        <option value="10000">청소년</option>
+      </select>
+    </div>
+
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>N/A</small>
+      </li>
+
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+
+    </ul>
 
     <div class="container">
       <div class="screen"></div>
@@ -99,5 +123,6 @@
         <div class="seat"></div>
       </div>
     </div>
+    
 </body>
 </html>
