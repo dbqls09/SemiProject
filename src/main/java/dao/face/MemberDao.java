@@ -37,7 +37,7 @@ public interface MemberDao {
 //	int selectCntMemberByUser_idUser_pw(Connection conn, Member member);
 	
 	
-
+	public int joinIdCheck(String user_id);
 	
 
 	

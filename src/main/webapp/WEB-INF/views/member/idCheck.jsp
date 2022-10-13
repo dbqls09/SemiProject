@@ -1,3 +1,4 @@
+<%@page import="java.sql.Connection"%>
 <%@page import="dao.face.MemberDao"%>
 <%@page import="dao.impl.MemberDaoImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -8,58 +9,61 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-#wrap{
-	width:490px;
-	text-align:center;
-	margin : 0 auto 0 auto;  
-}
-
-#chk{
-	text-align : center;
-}
-
-
-
 
 </style>
-
-
 <script type="text/javascript">
-
-
-
+	function result(){
+		
+		opener.document.userInfo.idDuplication.value ="idCheck";
+								 
+		opener.document.userInfo.user_id.value = document.wfr.user_id.value;
+		
+		opener.document.userInfo.user_id.readOnly=true;
+		
+		
+		
+		window.close();
+}
 
 </script>
 
+
+
 </head>
-<body onload="pValue()">
-<div id="wrap">
-	<br>
-    <b><font size="4" color="gray">아이디 중복체크</font></b>
-   
-		<%
-			String user_id = request.getParameter("user_id");
-		//
+<body>
+<h2>아이디 중복 체크</h2>
+
+	<%
+	
+		String user_id = request.getParameter("user_id");
 		MemberDao memberDao = new MemberDaoImpl();
-		
-		%>
-		
-		
-    <hr size="1" width="460">
-    <br>    
-	<div id="chk">
-	    <form action="/id/check" method = "post" id="checkForm" name="checkForm" >
-	  	<input type="text" name="user_id" id="user_id">
-	   
-		<input type="submit" value="중복 확인" >
-	    </form> 
 	
+		int result = memberDao.joinIdCheck(user_id);
+		if(result == 1){
+			out.print("사용 가능한 아이디");
+	%>
+		<input type="button" value="아이디 사용하기" onclick="result();">
+	<%
+		 
+		}else if(result ==0){
+			out.print("중복된 아이디");
+		}else{
+			out.print("에러발새에");
+		}
+	%>
+
+<fieldset>
 	
-		<div id="msg"></div>       
-		<br>      
-	<input id="cancelBtn" type="button" value="취소" onclick="window.close()"><br> 
-	</div>	
-</div>    
+	<form action="/id/check" method="get" name="wfr">
+		ID : <input type="text" name="user_id" value="<%=user_id%>">
+		<input type="submit" value="중복 확인">	 
+		
+	</form>
+</fieldset>	
+
+
+
+
 
 </body>
 </html>

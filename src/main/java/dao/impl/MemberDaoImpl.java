@@ -156,5 +156,44 @@ public class MemberDaoImpl implements MemberDao {
 	}
 	
 
+	@Override
+	public int joinIdCheck(String user_id) {	
+
+		String sql="";
+		sql += "SELECT * FROM MEMBER WHERE user_id = ?";
+		
+		
+		int result = -1;
+		
+		try {
+			
+			Connection conn = JDBCTemplate.getConnection();
+			
+			
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, user_id);
+			
+			rs=ps.executeQuery();
+			
+			if(rs.next()) {
+				result =0;
+			}else {
+				result = 1;
+			}
+			
+			System.out.println("아이디 중복 체크 결과 : " + result);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(rs);
+			JDBCTemplate.close(ps);
+		
+		}
+			
+		return result;
+	}
+
+
 
 }

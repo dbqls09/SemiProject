@@ -19,7 +19,11 @@ $(document).ready(function(){
 function check()
 {
 	var form = document.userInfo;
-
+	//중복 누르지 않고 넘어갈시
+	if (form.idDuplication.value!="idCheck"){
+		alert("중복체크 해주세요")
+		return false;
+	}
 	
 	//아이디 빈칸일시
 	if (!form.user_id.value){
@@ -222,7 +226,8 @@ body {
 
 	<div class="textForm">		
 			<input id="user_id" name="user_id" type="text" class="user_id" placeholder="아이디" >		
-			<input type="button" class="idcheck" value="중복확인" onclick="idCheck()">		
+			<input type="button" class="idcheck" value="중복확인" onclick="idCheck()">	
+			<input type="hidden" name="idDuplication" value="idUncheck">	
 	</div>
       
 
