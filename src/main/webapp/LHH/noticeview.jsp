@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" type="text/css" href="./LHH/style.css" >
 <%@include file="./header.jsp" %>
 
 
@@ -42,6 +42,7 @@
 <tr>
 <td class="success" style="width: 10%">글번호</td><td></td>
 <td class="success" style="width: 10%">작성일</td><td></td>
+<td class="success" style="width: 10%">조회수</td><td></td>
 </tr>
 
 
