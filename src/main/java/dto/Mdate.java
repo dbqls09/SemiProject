@@ -23,7 +23,6 @@ public class Mdate {
 	public void setShowDate(String showDate) {
 		this.showDate = showDate;
 	}
-	
-	
+
 
 }

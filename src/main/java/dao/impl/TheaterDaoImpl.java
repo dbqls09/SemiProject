@@ -14,7 +14,7 @@ import dto.Theater;
 public class TheaterDaoImpl implements TheaterDao {
 
 	private PreparedStatement ps; //SQL수행 객체
-	private ResultSet rs; //SQL조회 결곽 객체
+	private ResultSet rs; //SQL조회 결과 객체
 	
 	@Override
 	public List<Theater> selectAll(Connection conn) {
