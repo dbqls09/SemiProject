@@ -69,8 +69,8 @@ System.out.println("LoginController :: " + member);
 		}
 
 		//로그인 성공 페이지로 리다이렉트
-//		resp.sendRedirect("/main/login/success");
-		req.getRequestDispatcher("/WEB-INF/views/member/loginsuccess.jsp").forward(req, resp);
+		resp.sendRedirect("/main");
+//		req.getRequestDispatcher("/WEB-INF/views/member/main").forward(req, resp);
 
 //		return;
 		System.out.println(req.getParameter("user_id"));

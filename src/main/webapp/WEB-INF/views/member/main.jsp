@@ -98,8 +98,17 @@ img {
 		<div class="title">KLC📽️INEMA</div>
 
 		<div class="nav-right-items">
+			<%-- 로그인 성공 시 --%>
+			<% if(session.getAttribute("login") != null && (boolean) session.getAttribute("login")) { %>
+            <a class="nav-item"><%=session.getAttribute("user_name") %>님, 환영합니다.</a><br>
+            <a class="nav-item" href="/main/logout">로그아웃</a> 
+             
+			<%-- 비로그인 시 --%>
+			<% } else if( session.getAttribute("login") == null) {%>
 			<a class="nav-item" href="./main/login">로그인</a> 
 			<a class="nav-item" href="./main/agreement">회원가입</a> 
+			<% } %>
+			 
 			<a class="nav-item" href="#">마이페이지</a> 
 			<a class="nav-item" href="#">고객센터</a> 
 			<a class="nav-item" href="#" style="border-right: none;">빠른예매</a>
