@@ -98,8 +98,8 @@ img {
 		<div class="title">KLC📽️INEMA</div>
 
 		<div class="nav-right-items">
-			<a class="nav-item" href="./main/login">로그인</a> 
-			<a class="nav-item" href="./main/agreement">회원가입</a> 
+			<a class="nav-item" href="/main/login">로그인</a> 
+			<a class="nav-item" href="/main/agreement">회원가입</a> 
 			<a class="nav-item" href="#">마이페이지</a> 
 			<a class="nav-item" href="#">고객센터</a> 
 			<a class="nav-item" href="#" style="border-right: none;">빠른예매</a>

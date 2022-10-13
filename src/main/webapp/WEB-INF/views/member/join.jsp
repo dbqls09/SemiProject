@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript">
 
 $(document).ready(function(){
@@ -88,19 +88,6 @@ function idCheck(){
 	
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 
 <style type="text/css">
@@ -120,7 +107,7 @@ body {
 .joinForm {
   position:absolute;
   width:400px;
-  height:630px;
+  height:700px;
   padding: 30px, 20px;
   background-color:#FFFFFF;
   text-align:center;
