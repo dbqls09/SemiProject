@@ -28,7 +28,7 @@ public class QnaUpdateController extends HttpServlet {
 		Qna qnano = qnaService.getQnano(req);
 		System.out.println("QnaUpdateController doGet() - 전달파라미터 객체 :" + qnano);
 		
-		//상세보기 결과 조회
+		//상세보기 결과 조회d
 		Qna updateQna = qnaService.view(qnano);
 		System.out.println("QnaUpdateController doGet() - 상세보기 객체 :" + updateQna);
 		
