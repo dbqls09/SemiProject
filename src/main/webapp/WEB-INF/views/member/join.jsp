@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
+<%@ include file="../layout/header.jsp" %>
 <script type="text/javascript">
 
 $(document).ready(function(){
@@ -118,15 +113,12 @@ body {
 }
 
 .joinForm {
-  position:absolute;
   width:400px;
-  height:630px;
   padding: 30px, 20px;
   background-color:#FFFFFF;
   text-align:center;
   top:60%;
   left:50%;
-  transform: translate(-50%,-50%);
   border-radius: 15px;
 }
 
@@ -139,6 +131,7 @@ body {
   border-bottom: 2px solid #adadad;
   margin: 30px;
   padding: 10px 10px;
+  display:
 }
 
 
@@ -214,11 +207,8 @@ body {
   border:none;
   display:inline;
 }
-
-
-
 </style>
-</head>
+
 <body bgcolor="#050040">
 
 <form action="/main/join" method="POST" class="joinForm"  name="userInfo"  onsubmit="return check()">
@@ -261,5 +251,6 @@ body {
       
 </form>
 
-</body>
-</html>
+<%@ include file="../layout/footer.jsp" %>
+
+

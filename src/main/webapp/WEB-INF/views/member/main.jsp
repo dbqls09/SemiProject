@@ -5,11 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>KLC📽️INEMA</title>
+
+<link rel="stylesheet" href="resources/footer.css" type="text/css">
+
 <style type="text/css">
 
 .nav{
-	height:150px;
-	border-bottom : 1px solid rgb(144, 144, 144);
+/* 	height:150px; */
+/* 	border-bottom : 1px solid rgb(144, 144, 144); */
 	display : flex;
  	align-items : flex-start;
  	margin: auto;
@@ -21,7 +24,12 @@
 	color: rgb(144, 144, 144);
 	display:flex;
 	margin-left: auto;
-	margin-right: auto;
+/* 	margin-right: auto; */
+	justify-content: flex-end;
+	margin-right: 10%;
+	padding: 1%;
+	
+	
 }
 
 .nav-item{
@@ -34,15 +42,21 @@
 }
 
 .title{
-	margin-top: 70px;
- 	margin-left: 730px;
- 	margin-right: auto; 
+ 	margin-top: 1%; 
+	margin-bottom: 3%;
+/*  	margin-left: 730px; */
+/*  	margin-right: auto;  */
 	justify-content: center;
  	align-items: center; 
  	display: flex;
 	font-size: 40px;
 	font-weight: bold;
 	color: rgb(255, 250, 240);
+/* 	border-bottom : 1px solid rgb(144, 144, 144); */
+}
+
+.title1 {
+	border-bottom : 1px solid rgb(144, 144, 144);
 }
 
 .main {
@@ -51,9 +65,6 @@
 	display: flex;
 }
 
-.photobox {
-	
-}
 
 .movie{
 	display : flex;
@@ -95,7 +106,7 @@ img {
 
 <body bgcolor="#050040">
 	<div class="nav">
-		<div class="title">KLC📽️INEMA</div>
+<!-- 		<div class="title">KLC📽️INEMA</div> -->
 
 		<div class="nav-right-items">
 			<%-- 로그인 성공 시 --%>
@@ -115,6 +126,10 @@ img {
 			<!-- 			<a class="nav-item"><button onclick="location.href='/main/join'">회원가입</button> </a> -->
 		</div>
 
+	</div>
+	
+	<div class="title1">
+	<div class="title">KLC📽️INEMA</div>
 	</div>
 	
 

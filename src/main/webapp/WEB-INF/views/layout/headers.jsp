@@ -131,4 +131,3 @@ img {
 	<div class="title1">
 	<div class="title">KLC📽️INEMA</div>
 	</div>
-	
