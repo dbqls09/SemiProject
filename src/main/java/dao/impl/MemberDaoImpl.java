@@ -1,6 +1,7 @@
 package dao.impl;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,8 +20,8 @@ public class MemberDaoImpl implements MemberDao {
 
 		String sql = "";
 		sql += "SELECT count(*) cnt FROM member";
-		sql += " WHERE 'user_id' = ?";
-		sql += "    AND 'user_pw' = ?";
+		sql += " WHERE user_id = ?";
+		sql += "    AND user_pw = ?";
 
 		int cnt = 0;
 
@@ -45,14 +46,13 @@ public class MemberDaoImpl implements MemberDao {
 		return cnt;
 
 	}
-
-
+	
 	@Override
-	public Member selectMemberByUser_idUser_pw(Connection conn, Member member) {
+	public Member selectMemberByUser_id(Connection conn, Member member) {
 
 		String sql = "";
-		sql += "SELECT 'user_id', 'user_pw' FROM member";
-		sql += " WHERE 'user_id' = ?";
+		sql += "SELECT * FROM member";
+		sql += " WHERE user_id = ?";
 
 		Member result = null;
 
@@ -65,12 +65,52 @@ public class MemberDaoImpl implements MemberDao {
 			while(rs.next()) {
 				result = new Member();
 
-				result.setUser_id( rs.getString("User_id"));
-				result.setUser_pw( rs.getString("User_pw"));
-				result.setUser_name( rs.getString("User_name"));
-				result.setUser_birth( rs.getString("User_birth"));
-				result.setUser_email( rs.getString("User_email"));
-				result.setUser_phone( rs.getString("User_phone"));
+				result.setUser_id(rs.getString("user_id"));
+				result.setUser_pw(rs.getString("user_pw"));
+				result.setUser_name(rs.getString("user_name"));
+				result.setUser_birth(rs.getString("user_birth"));
+				result.setUser_email(rs.getString("user_email"));
+				result.setUser_phone(rs.getString("user_phone"));
+
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			JDBCTemplate.close(ps);
+			JDBCTemplate.close(ps);
+		}
+
+		return result;
+
+	}
+
+
+	@Override
+	public Member selectMemberByUser_idUser_pw(Connection conn, Member member) {
+
+		String sql = "";
+		sql += "SELECT user_id, user_pw FROM member";
+		sql += " WHERE user_id = ?";
+
+		Member result = null;
+
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, member.getUser_id());
+
+			rs = ps.executeQuery();
+
+			while(rs.next()) {
+				result = new Member();
+				result.setUser_id( rs.getString("user_id"));
+				result.setUser_pw( rs.getString("user_pw"));
+				result.setUser_name( rs.getString("user_name"));
+				result.setUser_birth( rs.getString("user_birth"));
+				result.setUser_email( rs.getString("user_email"));
+				result.setUser_phone( rs.getString("user_phone"));
 			}
 
 		} catch (SQLException e) {
@@ -89,7 +129,7 @@ public class MemberDaoImpl implements MemberDao {
 	public int insert(Connection conn, Member param) {
 
 		String sql = "";
-		sql += "INSERT INTO member";
+		sql += "INSERT INTO member(user_id, user_pw, user_name, user_birth, user_email, user_phone)";
 		sql += " VALUES ( ?, ?, ?, ?, ?, ?) ";
 
 		//INSERT 수행 결과 변수
@@ -116,47 +156,6 @@ public class MemberDaoImpl implements MemberDao {
 
 	}
 	
-	@Override
-	public Member selectMemberByUser_id(Connection conn, Member member) {
-
-		String sql = "";
-		sql += "SELECT * FROM member";
-		sql += " WHERE 'userid' = ?";
-
-		Member result = null;
-
-		try {
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, member.getUser_id());
-
-			rs = ps.executeQuery();
-
-			while(rs.next()) {
-				result = new Member();
-
-				result.setUser_id(rs.getString("User_id"));
-				result.setUser_pw(rs.getString("User_pw"));
-				result.setUser_name(rs.getString("User_name"));
-				result.setUser_birth(rs.getString("User_birth"));
-				result.setUser_email(rs.getString("User_email"));
-				result.setUser_phone(rs.getString("User_phone"));
-
-
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-			
-		} finally {
-			JDBCTemplate.close(ps);
-			JDBCTemplate.close(ps);
-		}
-
-		return result;
-
-	
-		
-	}
 
 
 }

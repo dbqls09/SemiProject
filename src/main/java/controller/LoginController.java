@@ -36,8 +36,7 @@ public class LoginController extends HttpServlet {
 
 		//전달 파라미터에 대한 한글 인코딩 설정(UTF-8)
 		req.setCharacterEncoding("UTF-8");
-
-
+		
 		//전달파라미터 로그인 정보 얻어오기
 		Member member = memberService.getLoginMember(req);
 		
@@ -48,13 +47,14 @@ public class LoginController extends HttpServlet {
 
 		//로그인 인증
 		boolean isLogin = memberService.login(member);
+		System.out.println("LoginController :: " + isLogin);
 
 		//로그인 인증 성공
 		if( isLogin ) {
 
 			//로그인 사용자 정보 조회
 			member = memberService.info(member);
-
+System.out.println("LoginController :: " + member);
 			//세선 정보 객체
 			HttpSession session = req.getSession();
 
@@ -62,13 +62,14 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("user_id", member.getUser_id());
 			session.setAttribute("user_pw", member.getUser_pw());
 			session.setAttribute("user_name", member.getUser_name());
-			session.setAttribute("user_birth", member.getUser_birth());
-			session.setAttribute("user_email", member.getUser_email());
-			session.setAttribute("user_phone", member.getUser_phone());
+//			session.setAttribute("user_birth", member.getUser_birth());
+//			session.setAttribute("user_email", member.getUser_email());
+//			session.setAttribute("user_phone", member.getUser_phone());
 		}
 
 		//로그인 성공 페이지로 리다이렉트
-		resp.sendRedirect("/main/login/success");
+//		resp.sendRedirect("/main/login/success");
+		req.getRequestDispatcher("/WEB-INF/views/member/loginsuccess.jsp").forward(req, resp);
 
 //		return;
 		System.out.println(req.getParameter("user_id"));
@@ -76,8 +77,11 @@ public class LoginController extends HttpServlet {
 		
 		System.out.println(req.getParameterValues("member"));
 
-
 	}
+//	} else {
+//		
+//		resp.sendRedirect("/main/login/fail");
+//	}
 
 	
 
