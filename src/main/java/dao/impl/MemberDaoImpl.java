@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import common.JDBCTemplate;
 import dao.face.MemberDao;
 import dto.Member;
-
 public class MemberDaoImpl implements MemberDao {
 
 	private PreparedStatement ps;
