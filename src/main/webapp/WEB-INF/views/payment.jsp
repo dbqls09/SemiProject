@@ -71,7 +71,7 @@
 	
 	<div class="btn-group">
 	<button onclick="location.href='<%=request.getContextPath() %>/seat'" class="btn">이전</button>
-	<button type="button" class="btn">다음</button>
+	<button onclick="location.href='<%=request.getContextPath() %>/pay_ck'" class="btn">다음</button>
 	</div>
 	
 </div>
