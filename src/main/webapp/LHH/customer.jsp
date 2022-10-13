@@ -1,9 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="./style.css" >
+    
 <%@include file="./header.jsp" %>
 
 <style>
+.innerwrap {
+    width: 1100px;
+    margin: 0 auto;
+    display:flex;
+}
+
+.left{width:30%; }
+.right{width:70%;margin-left: 80px;  }
+.board{
+	justify-content: center;
+	align-items: center;
+}
+
+.homeBox{
+	margin-bottom: 50px;
+	border-radius: 0 0 1rem 1rem;
+	border: 2px solid #d7d8da;
+	border-top: 0;
+}
+.home,.home1,.home2,.home3{
+	color: #f1f1f1;   
+    padding: 20px;
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
+}
+.home{
+	background-color: #f2f4f5;
+}
+.home1{
+	height: 50px;
+	background-color: #3c3c3c;
+	border-radius: 0.8rem 0.8rem 0 0;
+	text-align: center;
+	font-weight: 800;
+}
+
+.home2{
+	color: #333;
+	background-color: #f2f4f5;
+	border-radius: 0 0 0 0;
+}
+.home2 > div{
+	margin: 0;
+	padding: 1rem;
+	border-bottom: 1px solid #d7d8da;
+	cursor: pointer;
+}
+.home2 > div:hover{
+	color: #317188;
+	background-color: #ffffff;
+}
+.home3{
+	color: #666666;
+	background-color: #ffffff;
+	border-radius: 0 0 0.8rem 0.8rem;
+	border-top: 1px solid #d7d8da;
+}
+
+.home3 > h3, p {text-align: center;}
 .custo-main .main-block .block-content {
     float: left;
     width: 280px;
@@ -48,9 +106,9 @@
 		<div class="homeBox">
 	
 	    <div class="home2">
-	      <div onclick="location='cspage.jsp'">고객센터 홈</div>
-	      <div onclick="location='notice.jsp'">공지사항</div>
-	      <div onclick="location='qna.jsp'">1:1문의</div>
+	      <div onclick="location='<%=request.getContextPath() %>/customer'">고객센터 홈</div>
+	      <div onclick="location='<%=request.getContextPath() %>/notice/list'">공지사항</div>
+	      <div onclick="location='<%=request.getContextPath() %>/qna/write'">1:1문의</div>
 	    </div>
 	    
 	    <div class="home3">
@@ -68,7 +126,7 @@
 		
 	
 		<div class="block-content">
-			<a href="qna.jsp" title="1:1 문의 페이지로 이동">
+			<a href="<%=request.getContextPath() %>/qna/write" title="1:1 문의 페이지로 이동">
 				<p>
 					<strong>1:1 문의</strong>
 					해결되지않은 문제가 있나요?<br>1:1문의로 문의주세요
@@ -76,7 +134,7 @@
 			</a>
 		</div>
 		<div class="block-content">
-			<a href="notice.jsp" title="공지사항 페이지로 이동">
+			<a href="<%=request.getContextPath() %>/notice/list" title="공지사항 페이지로 이동">
 				<p>
 					<strong>공지사항</strong>
 					공지사항을 확인해주세요 

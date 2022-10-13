@@ -7,6 +7,17 @@
 
 <% List<Notice> noticeList = (List) request.getAttribute("noticeList"); %>
 
+<style type="text/css">
+th,td {
+	text-align: center;
+}
+
+td:nth-child(2) {
+	text-align: justify;
+}
+
+</style>
+
 <div class="top"><h2>고객센터</h2></div>
 <div class="innerwrap">
 	<div class="left">
@@ -14,7 +25,7 @@
 		<div class="homeBox">
 	
 	    <div class="home2">
-	      <div onclick="location='cspage.jsp'">고객센터 홈</div>
+	      <div onclick="location='../customer'">고객센터 홈</div>
 	      <div onclick="location='../notice/list'">공지사항</div>
 	      <div onclick="location='../qna/write'">1:1문의</div>
 	    </div>
@@ -45,7 +56,7 @@
 	<tr>
 		<td><%=noticeList.get(i).getNotice_no() %></td> 
 		
-		<td>
+		<td><a><a href="./view?notice_no=<%=noticeList.get(i).getNotice_no() %>">
 			<%=noticeList.get(i).getNotice_title() %></a>
 		</td>
 		

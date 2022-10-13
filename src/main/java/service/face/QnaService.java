@@ -49,8 +49,8 @@ public interface QnaService {
 	 *전달된 boardno를 이용하여 게시글을 조회한다
 	 *조회된 게시글의 조회수를 1 증가시킨다
 	 * 
-	 * @param board - 조회할 boardno를 가진 DTO객체
-	 * @return Board -  조회된 게시글 정보
+	 * @param qna - 조회할 Qna qnano를 가진 DTO객체
+	 * @return Qna -  조회된 게시글 정보
 	 */
 	public Qna view(Qna qnano);
 
@@ -61,6 +61,20 @@ public interface QnaService {
 	 * @param req - 요청 정보 객체 
 	 */
 	public void write(HttpServletRequest req);
+
+	/**
+	 * 게시글 수정
+	 * 
+	 * @param req - 요청 정보 객체
+	 */
+	public void update(HttpServletRequest req);
+
+	/**
+	 * 게시글 삭제하기
+	 * 
+	 * @param qna - 삭제할 게시글 번호 객체
+	 */
+	public void delete(Qna qna);
 
 
 

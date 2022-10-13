@@ -83,7 +83,7 @@ public class QnaServiceImpl implements QnaService {
 	
 	@Override
 	public Qna view(Qna qnano) {
-		System.out.println("ServiceImpl() - Qna view");
+//		System.out.println("ServiceImpl() - Qna view");
 		Connection conn = JDBCTemplate.getConnection();
 		
 
@@ -100,10 +100,10 @@ public class QnaServiceImpl implements QnaService {
 		
 		Qna qna = new Qna();
 		//제목처리
-		qna.setQna_title(req.getParameter("qna_title"));
+		qna.setQna_title(req.getParameter("qna_title")); //parameter는 form안에있는 input name
 		
 		//본문 처리
-		qna.setQna_content(req.getParameter("qna_content"));
+		qna.setQna_content(req.getParameter("qna_content"));//parameter는 form안에있는 textarea name
 	
 		//작성자 ID처리
 //		qna.setQna_userid( (String) req.getSession().getAttribute("qna_userid"));
@@ -118,6 +118,52 @@ public class QnaServiceImpl implements QnaService {
 		
 		
 	}
+	
+	
+	
+	@Override
+	public void update(HttpServletRequest req) {
+		
+		Connection conn = JDBCTemplate.getConnection();
+		
+		Qna qna = new Qna();
+		
+		
+		//수정할 글 번호
+		qna.setQna_no(Integer.parseInt(req.getParameter("qna_no"))); //parameter는 form안에있는 input name
+		
+		//제목처리
+		qna.setQna_title(req.getParameter("qna_title")); //parameter는 form안에있는 input name
+		
+		//본문 처리
+		qna.setQna_content(req.getParameter("qna_content"));//parameter는 form안에있는 textarea name
+	
+		
+		if(qnaDao.update(conn, qna) > 0) {
+			JDBCTemplate.commit(conn);
+		} else {
+			JDBCTemplate.rollback(conn);
+		}
+		
+	}
+	
+	
+	@Override
+	public void delete(Qna qna) {
+		
+		Connection conn = JDBCTemplate.getConnection();
+		
+		//게시글 삭제
+		if(qnaDao.delete(conn,qna) > 0) {
+			JDBCTemplate.commit(conn);
+		} else {
+			JDBCTemplate.rollback(conn);
+		}
+		
+		
+	}
+		
+	
 	
 	
 }

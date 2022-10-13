@@ -33,8 +33,8 @@ public class QnaWriteController extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		
 		qnaService.write(req);
-		System.out.println("req"+req);
 		
+		//리다이렉트
 		resp.sendRedirect("./list");
 		
 	

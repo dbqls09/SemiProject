@@ -32,8 +32,8 @@ $(document).ready(function() {
 		<div class="homeBox">
 	
 	    <div class="home2">
-	      <div onclick="location='cspage.jsp'">고객센터 홈</div>
-	      <div onclick="location='notice.jsp'">공지사항</div>
+	      <div onclick="location='../customer'">고객센터 홈</div>
+	      <div onclick="location='../notice/list'">공지사항</div>
 	      <div onclick="location='../qna/write'">1:1문의</div>
 	    </div>
 	    
@@ -59,13 +59,11 @@ $(document).ready(function() {
 			
 	
 		
-		
-		
 		<form action="<%=request.getContextPath() %>/qna/write" method="post"   >
 		<table class="table table-bordered">
-		<tr><td class="success">제목</td><td><input type="text" name="title"  style="width:100%;" placeholder="제목을 입력해주세요"></td></tr>
+		<tr><td class="success">제목</td><td><input type="text" name="qna_title"  style="width:100%;" placeholder="제목을 입력해주세요"></td></tr>
 		<tr><td class="success" colspan="2">내용</td></tr>
-		<tr><td  colspan="2"><textarea id="content" name="content"  style="width:100%; height: 500px;"
+		<tr><td  colspan="2"><textarea id="content" name="qna_content"  style="width:100%; height: 500px;"
 		 placeholder="문의내용에 개인정보(이름,연락처,카드번호 등)가 포함되지 않도록 유의하시기 바랍니다".></textarea></td></tr>
 	
 		</table>	
@@ -73,7 +71,7 @@ $(document).ready(function() {
 		</form>
 		
 		<div class="text-center">
-			<button id="btnWrite" class="btn btn-info">작성</button>
+			<button id="btnWrite" class="btn btn-success">작성</button>
 			<button id="btnCancel" class="btn btn-warning">취소</button>
 		</div>
 

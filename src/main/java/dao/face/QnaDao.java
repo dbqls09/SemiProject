@@ -55,5 +55,23 @@ public interface QnaDao {
 	 */
 	public int insert(Connection conn, Qna qna);
 
+	/**
+	 * 게시글 수정
+	 * 
+	 * @param conn - DB연결 객체
+	 * @param  qna- 수정할 내용을 담은 객체
+	 * @return UPDATE 
+	 */
+	public int update(Connection conn, Qna qna);
+
+	/**
+	 * 게시글 삭제
+	 * @param conn - DB연결 객체
+	 * @param qna - 삭제할 게시글 번호
+	 * @return delete - 수행결과
+	 */
+	public int delete(Connection conn, Qna qna);
+
+
 
 }

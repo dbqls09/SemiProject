@@ -197,7 +197,7 @@ public class QnaDaoImpl implements QnaDao {
 		
 	@Override
 	public int insert(Connection conn, Qna qna) {
-		System.out.println("insert(conn, qna)");
+//		System.out.println("insert(conn, qna)");
 		String sql ="";
 		sql += "INSERT INTO qna( qna_no, qna_title, qna_content )";
 		sql += "	VALUES ( qna_seq.nextval, ?, ?)";
@@ -207,9 +207,8 @@ public class QnaDaoImpl implements QnaDao {
 		try {
 			ps = conn.prepareStatement(sql);
 			
-			ps.setInt(1, qna.getQna_no());
-			ps.setString(2, qna.getQna_title());
-			ps.setString(3, qna.getQna_content());
+			ps.setString(1, qna.getQna_title());
+			ps.setString(2, qna.getQna_content());
 			
 			res = ps.executeUpdate();
 			
@@ -222,7 +221,61 @@ public class QnaDaoImpl implements QnaDao {
 		return res;
 	}
 	
+	@Override
+	public int update(Connection conn, Qna qna) {
+		
+		String sql ="";
+		sql += "UPDATE  qna";
+		sql += " SET";
+		sql += " qna_title = ?";
+		sql += " ,qna_content = ?";
+		sql += " WHERE qna_no = ?";
+		
+
+		int res = 0;
+		
+		try {
+			ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, qna.getQna_title());
+			ps.setString(2, qna.getQna_content());
+			ps.setInt(3, qna.getQna_no());
+			
+			res = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(ps);
+		}
+		
+		return res;
+	}
 	
+	@Override
+	public int delete(Connection conn, Qna qna) {
+		
+		String sql ="";
+		sql += "DELETE  qna";
+		sql += " WHERE qna_no = ?";
+		
+		int res = 0;
+		
+		try {
+			ps = conn.prepareStatement(sql);
+			
+			ps.setInt(1, qna.getQna_no());
+			
+			res = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(ps);
+		}
+		
+		return res;
+	}
 	
 	
 	
