@@ -1,6 +1,7 @@
 package dao.impl;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -43,6 +44,46 @@ public class MemberDaoImpl implements MemberDao {
 		}
 
 		return cnt;
+
+	}
+	
+	@Override
+	public Member selectMemberByUser_id(Connection conn, Member member) {
+
+		String sql = "";
+		sql += "SELECT * FROM member";
+		sql += " WHERE user_id = ?";
+
+		Member result = null;
+
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, member.getUser_id());
+
+			rs = ps.executeQuery();
+
+			while(rs.next()) {
+				result = new Member();
+
+				result.setUser_id(rs.getString("user_id"));
+				result.setUser_pw(rs.getString("user_pw"));
+				result.setUser_name(rs.getString("user_name"));
+				result.setUser_birth(rs.getString("user_birth"));
+				result.setUser_email(rs.getString("user_email"));
+				result.setUser_phone(rs.getString("user_phone"));
+
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			JDBCTemplate.close(ps);
+			JDBCTemplate.close(ps);
+		}
+
+		return result;
 
 	}
 
@@ -88,7 +129,7 @@ public class MemberDaoImpl implements MemberDao {
 	public int insert(Connection conn, Member param) {
 
 		String sql = "";
-		sql += "INSERT INTO member";
+		sql += "INSERT INTO member(user_id, user_pw, user_name, user_birth, user_email, user_phone)";
 		sql += " VALUES ( ?, ?, ?, ?, ?, ?) ";
 
 		//INSERT 수행 결과 변수
@@ -115,86 +156,6 @@ public class MemberDaoImpl implements MemberDao {
 
 	}
 	
-	@Override
-	public Member selectMemberByUser_id(Connection conn, Member member) {
-
-		String sql = "";
-		sql += "SELECT * FROM member";
-		sql += " WHERE user_id = ?";
-
-		Member result = null;
-
-		try {
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, member.getUser_id());
-
-			rs = ps.executeQuery();
-
-			while(rs.next()) {
-				result = new Member();
-
-				result.setUser_id(rs.getString("user_id"));
-				result.setUser_pw(rs.getString("user_pw"));
-				result.setUser_name(rs.getString("user_name"));
-				result.setUser_birth(rs.getString("user_birth"));
-				result.setUser_email(rs.getString("user_email"));
-				result.setUser_phone(rs.getString("user_phone"));
-
-
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-			
-		} finally {
-			JDBCTemplate.close(ps);
-			JDBCTemplate.close(ps);
-		}
-
-		return result;
-
-	
-		
-	}
-	
-	
-	@Override
-	public int joinIdCheck(String user_id) {	
-
-		String sql="";
-		sql += "SELECT * FROM MEMBER WHERE user_id = ?";
-		
-		
-		int result = -1;
-		
-		try {
-			
-			Connection conn = JDBCTemplate.getConnection();
-			
-			
-			ps=conn.prepareStatement(sql);
-			ps.setString(1, user_id);
-			
-			rs=ps.executeQuery();
-			
-			if(rs.next()) {
-				result =0;
-			}else {
-				result = 1;
-			}
-			
-			System.out.println("아이디 중복 체크 결과 : " + result);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			JDBCTemplate.close(rs);
-			JDBCTemplate.close(ps);
-		
-		}
-			
-		return result;
-	}
 
 
 }

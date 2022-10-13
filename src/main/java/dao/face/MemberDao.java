@@ -38,7 +38,7 @@ public interface MemberDao {
 	
 	
 
-	public int joinIdCheck(String user_id);
+	
 
 	
 	

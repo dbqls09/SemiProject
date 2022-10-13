@@ -46,12 +46,6 @@ function check()
 		return false;
 	}
 	
-	//아이디 중복체크를 누르지않고 회원가입을 누를시
-	if(form.idDuplication.value != "idCheck"){
-		alert("아이디 중복체크를 해주세요");
-		return false;
-	}
-	
 	//이메일 빈칸일시
 	if (!form.user_email.value){
 		alert("이메일을 입력하세요")
@@ -70,18 +64,39 @@ function check()
 		return false;
 	}
 }
+	
+// function openIdChk(){ 
+//   window.name = "parentForm";
+//   window.open("/id/check", "chkForm" ,"width=500, height=300,resizable = no,scrollbars=no");
+// }
 
 
 function idCheck(){
-	if(document.userInfo.user_id.value=="" || document.userInfo.user_id.value.length < 0 ){
+	if(document.userInfo.user_id.value=="" || document.userInfo.user_id.value.lengh < 0 ){
 		alert("id를입력하세요")
-		document.userInfo.user_id.focus()
+		return;
 	}
-	else{
+	
 	url = "/id/check?user_id=" + document.userInfo.user_id.value;
-	window.open(url , "","toolbar=no, location=no, status=no , menubar=no,scrollbar=no,resizable=no,width=500,height=300")
-	}
+	open(url , "confirm",
+		"toolbar=no, location=no, status=no , menubar=no,scrollbar=no,resizable=no,width=500,height=300"
+	)
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 <style type="text/css">
@@ -208,7 +223,6 @@ body {
 	<div class="textForm">		
 			<input id="user_id" name="user_id" type="text" class="user_id" placeholder="아이디" >		
 			<input type="button" class="idcheck" value="중복확인" onclick="idCheck()">		
-			<input type="hidden" name="idDuplication" value="idUncheck">
 	</div>
       
 

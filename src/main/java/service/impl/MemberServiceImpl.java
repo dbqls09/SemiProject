@@ -32,12 +32,12 @@ public class MemberServiceImpl implements MemberService{
 		//로그인 인증 성공
 		if( memberDao.selectCntMemberByUser_IdUser_pw(JDBCTemplate.getConnection(), member) > 0) {
 			return true;
-		} else; {
+		}
 
 		//로그인 인증 실패
 		return false;
 		}
-	}
+	
 
 	@Override
 	public Member info(Member member) {
@@ -49,7 +49,7 @@ public class MemberServiceImpl implements MemberService{
 
 		Member member = new Member();
 
-		member.setUser_name(req.getParameter("user_id"));
+		member.setUser_id(req.getParameter("user_id"));
 		member.setUser_pw(req.getParameter("user_pw"));
 		member.setUser_name(req.getParameter("user_name"));
 		member.setUser_birth(req.getParameter("user_birth"));
