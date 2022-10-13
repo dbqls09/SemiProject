@@ -126,7 +126,8 @@ span {
 		
 		<span class="dologin">
 			<button type="submit" id="btnLogin" onclick="return check()">LOGIN</button>
-			<button type="button" id="btnCancel">취소</button>
+			<button type="button" id="btnCancel" onclick="location.href='/main'">취소
+			</button>
 		</span>
 		
 		</form>
