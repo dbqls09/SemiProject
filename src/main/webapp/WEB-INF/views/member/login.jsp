@@ -6,6 +6,49 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("input").eq(0).focus() {
+		
+	$("input").eq(1).keydown(function(e){
+		if( e.keycode == 13 ) {
+				$("#btnLogin").click();
+		}
+	})
+	}
+	
+	//로그인 버튼
+	$("#btnLogin").click(function() {
+		$(this).parents("form").submit();
+	})
+	
+	
+	
+})
+</script>
+
+<script type="text/javascript">
+
+function check() {
+	if(document.loginform.user_id.value == ""){
+		alert("아이디를 입력하세요.");
+		document.loginform.user_id.focus();
+		return false;
+		
+	} else if(document.loginform.user_pw.value == "") {
+		alert("비밀번호를 입력하세요.");
+		document.loginform.user_pw.focus();
+		return false;
+		
+	} else {
+		return true;
+	}
+	
+}
+
+</script>
+
 <style type="text/css">
 
 .whole {
@@ -29,13 +72,18 @@ span {
 .howlogin {
 	margin-left: 22px;
 }
+
+.dologin {
+	width: 100px;
+	height: 100px;
+}
 </style>
 
 </head>
 <body bgcolor="#050040">
 
 <div class="whole">
-<form action="" method="post">
+<form action="/main/login" method="post" name="loginform">
 
 	<div class="title">
 		<h1 style="color: white;">LOGIN</h1>
@@ -44,27 +92,37 @@ span {
 	<br>
 
 	<div>
-		<div class="inputid">
-			<label style="margin-left:10px; color: white;">아이디<input type="text" name="id" style="margin-left: 15px;"></label>
-		</div>
-
+	<table>
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="user_id" id="user_id"></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="password" name="user_pw" id="user_pw"></td>
+		</tr>
 		<br>
 
-		<div class="inputpw">
-			<label style="color: white;">비밀번호<input type="text" name="pw"></label>
-		</div>
+<!-- 		<div class="inputpw"> -->
+<!-- 			<label style="color: white;">비밀번호<input type="text" name="pw"></label> -->
+<!-- 		</div> -->
+		</table>
 
 		<div class="chkbox">
 			<input type="checkbox" id="chk1" name="chk" >
 			<label for="ck1" style="color: white">아이디 저장</label>
 		</div>
+		
+		<span class="dologin">
+			<button type="submit" id="btnLogin" onclick="return check()">LOGIN</button>
+		</span>
 
 		<br>
 
 		<div class="option1" style="color: white">
 			<span>ID/PW 찿기</span>
 			<span>|</span>
-			<span>회원가입</span>
+			<span onclick="location.href='/main/join'">회원가입</span>
 			<span>|</span>
 			<span>비회원 예매</span>
 		</div>

@@ -20,8 +20,8 @@ public class MemberServiceImpl implements MemberService{
 
 		Member member = new Member();
 
-		member.setUser_id( req.getParameter("User_id"));
-		member.setUser_pw( req.getParameter("User_pw"));
+		member.setUser_id( req.getParameter("user_id"));
+		member.setUser_pw( req.getParameter("user_pw"));
 
 		return member;
 	}
@@ -32,10 +32,11 @@ public class MemberServiceImpl implements MemberService{
 		//로그인 인증 성공
 		if( memberDao.selectCntMemberByUser_IdUser_pw(JDBCTemplate.getConnection(), member) > 0) {
 			return true;
-		} else;
+		} else; {
 
 		//로그인 인증 실패
 		return false;
+		}
 	}
 
 	@Override
@@ -48,13 +49,13 @@ public class MemberServiceImpl implements MemberService{
 
 		Member member = new Member();
 
-		member.setUser_name(req.getParameter("User_id"));
-		member.setUser_pw(req.getParameter("User_pw"));
-		member.setUser_name(req.getParameter("User_name"));
-		member.setUser_birth(req.getParameter("User_birth"));
-		member.setUser_email(req.getParameter("User_email"));
-		member.setUser_phone(req.getParameter("User_phone"));
-		return null;
+		member.setUser_name(req.getParameter("user_id"));
+		member.setUser_pw(req.getParameter("user_pw"));
+		member.setUser_name(req.getParameter("user_name"));
+		member.setUser_birth(req.getParameter("user_birth"));
+		member.setUser_email(req.getParameter("user_email"));
+		member.setUser_phone(req.getParameter("user_phone"));
+		return member;
 
 	}
 	
@@ -82,8 +83,10 @@ public class MemberServiceImpl implements MemberService{
 		
 		if( memberDao.insert(conn,member) > 0) {
 			JDBCTemplate.commit(conn);
-		}else {
+			
+		} else {
 			JDBCTemplate.rollback(conn);
+			
 		}
 	}
 

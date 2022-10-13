@@ -8,39 +8,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dto.Member;
 import service.face.MemberService;
 import service.impl.MemberServiceImpl;
 
-@WebServlet("/main/join")
-public class JoinController extends HttpServlet {
+/**
+ * Servlet implementation class LoginSuccessController
+ */
+@WebServlet("/main/login/success")
+public class LoginSuccessController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
+	//서비스 객체 생성
 	private MemberService memberService = new MemberServiceImpl();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		req.getRequestDispatcher("/WEB-INF/views/member/join.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/member/loginsuccess.jsp").forward(req, resp);
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		
-		//회원가입 전달 파라미터
-		Member member = memberService.getJoinMember(req);	
-		
-		//회원가입 처리
-		memberService.join(member);
-		
-		//메인으로 리다이렉트
-		resp.sendRedirect("/main");
-		
-		
 	
-		
-		
-	}
-	
+
 }
