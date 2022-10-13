@@ -120,6 +120,7 @@ img {
 			<a class="nav-item" href="./main/agreement">회원가입</a> 
 			<% } %>
 			 
+>>>>>>> branch '3team' of https://github.com/dbqls09/semiProject.git
 			<a class="nav-item" href="#">마이페이지</a> 
 			<a class="nav-item" href="#">고객센터</a> 
 			<a class="nav-item" href="#" style="border-right: none;">빠른예매</a>
