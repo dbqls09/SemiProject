@@ -22,8 +22,8 @@ public class MdateDaoImpl implements MdateDao {
 		
 		//SQL작성
 		String sql = "";
-		sql += "SELECT show_date FROM Mdate";
-		sql += " ORDER BY show_date DESC";
+		sql += "SELECT * FROM Mdate";
+		sql += " ORDER BY show_date";
 				
 		//결과 저장할 List
 		List<Mdate> mdateList = new ArrayList<>();
@@ -40,10 +40,8 @@ public class MdateDaoImpl implements MdateDao {
 				//결과값 한 행씩 처리
 				d.setShowDate(rs.getString("show_date"));
 
-						
 				//리스트에 결과값 저장
 				mdateList.add(d);
-						
 			}
 					
 		} catch (SQLException e) {

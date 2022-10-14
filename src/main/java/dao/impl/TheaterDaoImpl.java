@@ -21,8 +21,8 @@ public class TheaterDaoImpl implements TheaterDao {
 		
 		//SQL작성
 		String sql = "";
-		sql += "SELECT theater_name FROM theater";
-		sql += " ORDER BY theater_name DESC";
+		sql += "SELECT * FROM theater";
+		sql += " ORDER BY theater_no DESC";
 		
 		//결과 저장할 List
 		List<Theater> theaterList = new ArrayList<>();

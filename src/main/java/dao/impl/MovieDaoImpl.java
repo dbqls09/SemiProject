@@ -21,8 +21,8 @@ public class MovieDaoImpl implements MovieDao {
 		
 		//SQL작성
 		String sql = "";
-		sql += "SELECT movie_title FROM movie";
-		sql += " ORDER BY movie_title DESC";
+		sql += "SELECT * FROM movie";
+		sql += " ORDER BY movie_title";
 		
 		//결과 저장할 List
 		List<Movie> movieList = new ArrayList<>();
@@ -38,6 +38,7 @@ public class MovieDaoImpl implements MovieDao {
 				
 				//결과값 한 행씩 처리
 				m.setMovieTitle(rs.getString("movie_title"));
+				m.setMovieAge(rs.getInt("movie_age"));
 				
 				//리스트에 결과값 저장
 				movieList.add(m);
