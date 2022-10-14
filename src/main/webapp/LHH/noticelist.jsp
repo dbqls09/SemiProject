@@ -25,9 +25,9 @@ td:nth-child(2) {
 		<div class="homeBox">
 	
 	    <div class="home2">
-	      <div onclick="location='../customer'">고객센터 홈</div>
-	      <div onclick="location='../notice/list'">공지사항</div>
-	      <div onclick="location='../qna/write'">1:1문의</div>
+	      <div onclick="location='<%=request.getContextPath() %>/customer'">고객센터 홈</div>
+	      <div onclick="location='<%=request.getContextPath() %>/notice/list'">공지사항</div>
+	      <div onclick="location='<%=request.getContextPath() %>/qna/write'">1:1문의</div>
 	    </div>
 	    
 	    <div class="home3">

@@ -3,7 +3,6 @@
     
 <%@include file="./header.jsp" %>
 
-
 <style>
 .innerwrap {
     width: 1100px;
@@ -100,16 +99,16 @@
 
 </style>
 
-<div class="top"><h2>고객센터</h2></div>
+<div class="top"><h2>마이페이지</h2></div>
 <div class="innerwrap">
 	<div class="left">
- 		<div class="home1">고객센터</div>
+ 		<div class="home1">마이페이지</div>
 		<div class="homeBox">
 	
 	    <div class="home2">
-	      <div onclick="location='<%=request.getContextPath() %>/customer'">고객센터 홈</div>
-	      <div onclick="location='<%=request.getContextPath() %>/notice/list'">공지사항</div>
-	      <div onclick="location='<%=request.getContextPath() %>/qna/write'">1:1문의</div>
+	      <div onclick="location='<%=request.getContextPath() %>/mypage'">마이페이지 홈</div>
+	      <div onclick="location='<%=request.getContextPath() %>/member/update'">내 정보 수정</div>
+	      <div onclick="location='<%=request.getContextPath() %>/mypage/res'">예매 내역</div>
 	    </div>
 	    
 	    <div class="home3">
@@ -127,18 +126,18 @@
 		
 	
 		<div class="block-content">
-			<a href="<%=request.getContextPath() %>/qna/write" title="1:1 문의 페이지로 이동">
+			<a href="<%=request.getContextPath() %>/member/update" title="회원 정보 페이지로 이동">
 				<p>
-					<strong>1:1 문의</strong>
-					해결되지않은 문제가 있나요?<br>1:1문의로 문의주세요
+					<strong>회원 정보</strong>
+					회원 정보 수정 <br>회원탈퇴 바로가기
 				</p>
 			</a>
 		</div>
 		<div class="block-content">
-			<a href="<%=request.getContextPath() %>/notice/list" title="공지사항 페이지로 이동">
+			<a href="<%=request.getContextPath() %>/mypage/res" title="예매 조회 페이지로 이동">
 				<p>
-					<strong>공지사항</strong>
-					공지사항을 확인해주세요 
+					<strong>예매내역</strong>
+					예매내역 확인을 <br>하실 수 있어요
 				</p>
 			</a>
 		</div>
