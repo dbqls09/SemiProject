@@ -27,14 +27,6 @@
 	background-color: #ff8955;
  } 
 
-/*  input[type="checkbox"]:checked + label{  */
-/*  	background-color: #666666;  */
-/*  }  */
-
-/* input[type="checkbox"] { */
-/* 	display: none; */
-/* } */
-
 .seat-wrapper {
 	width:50%;
 	height:280px;
@@ -178,12 +170,13 @@ function getCheckboxValue()  {
 			<span id='result'></span>
 			
 			<div class="btn-group">
-			<button class="btn">이전</button>
 			<button type ="submit" class="btn">예매</button>
+			<button type="button" onclick="location.href='<%=request.getContextPath() %>/reservation'" class="btn">이전</button>
 			</div>
 			
 		</div>
-		</form>
+			</form>
+		
 		
 <%@ include file="./layout/footer.jsp" %>		
 

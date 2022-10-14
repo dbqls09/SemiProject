@@ -2,7 +2,97 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ include file="./layout/header.jsp" %>
     
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+.payment-wrapper {
+	width:50%;
+	height:280px;
+	float:left;
+	margin-left: 500px;
+}
+
+.payment-select {
+	border: 1px solid black;
+	width: 280px;
+	height: 500px;
+	
+}
+
+.select {
+	width:400px;
+	height: 35px;
+}
+
+.payment-table {
+	border: 1px solid black;
+	border-bottom-color: black;
+}
+
+.crad-select {
+	width:300px;
+	height: 35px;
+}
+
+.payment-total {
+	width: 280px;
+	height: 500px;
+	border: 1px solid #444;
+	border-radius: 3em;
+	background-color: #444;
+	position: relative;
+}
+
+.info {
+	position: relative;
+    min-height: 350px;
+    margin: 0px;
+    padding: 15px;
+}
+
+.payment-total {
+	width: 280px;
+	height: 500px;
+	border: 1px solid #F0FFFF;
+	background-color: #F0FFFF;
+	border-radius: 3em;
+	position: relative;
+	margin-left: 1000px
+}
+
+.btn-group {
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-group .btn {
+	width: 100%;
+    height: 40px;
+}
+
+h3 {
+	color: white;
+}
+
+table span {
+	color: white;
+}
+</style>
+
+</head>
+<body>
     <%
   //예매가 확정된 좌석 정보를 저장할 리스트
   	List<String> list = new ArrayList<>();
@@ -15,34 +105,8 @@
   
 
     %>
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" href="/css/payStyle.css">
-
-<style type="text/css">
-
-/* span { */
-/* 	color: #6feaf6; */
-/* } */
-
-</style>
-
-</head>
-<body>
 
 <div class="payment-wrapper">
-
-<div class="col-xs-6">
 
 <h3>관람권 및 할인적용</h3>
 <div>
@@ -63,14 +127,14 @@
 <table class="payment-table">
 
 <tr>
-<td><input type="radio" name="payment" value="card">카드</td>
-<td><input type="radio" name="payment" value="phone">휴대폰 결제</td>
-<td><input type="radio" name="payment" value="easypay">간편 결제</td>
-<td><input type="radio" name="payment" value="bankbook">무통장 입금</td>
+<td><input type="radio" name="payment" value="card"><span>카드</span></td>
+<td><input type="radio" name="payment" value="phone"><span>휴대폰 결제</span>></td>
+<td><input type="radio" name="payment" value="easypay"><span>간편 결제</span>></td>
+<td><input type="radio" name="payment" value="bankbook"><span>무통장 입금</span>></td>
 </tr>
 
 <tr>
-<td>카드사 선택</td>
+<td><span>카드사 선택</span>></td>
 <td colspan="3">
 <select class="crad-select">
 <option>카드선택</option>
@@ -80,10 +144,10 @@
 </table>
 </div>
 
+
 </div>
 
 
-		<div class="col-xs-2">
 		<div class="payment-total">
 		
 		
@@ -93,7 +157,7 @@
 		
 			<%
 				for(String s : seat){
-					out.print( "좌석 : " + "<span>["+s+ "]</br>");
+					out.print( "좌석 : " + "<span>["+s+ "]");
 				}
 			%>
 <!-- 			<span id='result' style="color: #6feaf6;"></span> -->
@@ -103,7 +167,6 @@
 			<button type ="submit" class="btn">결제</button>
 			</div>
 			
-		</div>
 		</div>
 
 
