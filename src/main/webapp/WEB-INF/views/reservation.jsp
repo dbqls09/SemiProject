@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>영화 예매</title>
+<title>예매</title>
 
 <%	List<Movie> movieList = (List) request.getAttribute("movieList"); %>
 <%	List<Theater> theaterList = (List) request.getAttribute("theaterList"); %>
@@ -34,19 +34,26 @@
 }
 
 .m-table {
- float: left;
  width: 300px;
 }
 
 .t-table {
- float: left;
  width: 300px;
  margin-right: 0px;
 }
 
 .d-table {
- float: left;
  width: 300px;
+}
+
+.box {
+ margin-left: 20px;
+ background-color: #696969;
+}
+
+.btn {
+ display: block;
+ margin: auto;
 }
 
 </style>
@@ -55,12 +62,16 @@
 <body>
 
 <div class="main">
-	<h1>KLCinema</h1>
+	<h1>KLC📽️INEMA</h1>
 </div>
+
+<br>
 
 <div class="main2">
 	<h3>예매하기</h3>
 </div>
+
+<br>
 
 <div class="tb">
 <table class="m-table">
@@ -107,6 +118,16 @@
 		<%	} %>
 		
 	</table>
+
+<div class="box">
+	<img src="/imgs/444.png" style="height: 230px;">
+	<hr>
+	<span>해리포터와 마법사의 돌</span><br>
+	<span>극장: 강남점</span>
+	<span>날짜: 10월 20일</span>
+	<hr>
+	<button onclick="location.href='<%=request.getContextPath() %>/seat'" class="btn">좌석선택</button>
+</div>
 </div>
 
 </body>

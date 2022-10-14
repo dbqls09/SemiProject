@@ -164,7 +164,7 @@ table span {
 			
 			<div class="btn-group">
 			<button onclick="location.href='<%=request.getContextPath() %>/seat'" class="btn">이전</button>
-			<button type ="submit" class="btn">결제</button>
+			<button onclick="location.href='<%=request.getContextPath() %>/pay_ck'" type ="submit" class="btn">결제</button>
 			</div>
 			
 		</div>

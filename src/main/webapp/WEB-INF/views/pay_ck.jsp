@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>예매확인</title>
+<title>예매 완료</title>
 
 <style type="text/css">
 
@@ -69,44 +69,44 @@
 </head>
 <body>
 
-<div class="main">
-	<h1>KLCinema</h1>
-</div>
-<br>
-<div class="main2">
-	<h3>예매 완료되었습니다</h3>
-</div>
-<br>
-	
-<didv class="bd1">	
-<div class="body1">
-	<div class="text1">
-		<a>예매정보</a>
-		<button class="recancel">예매취소</button>
+	<div class="main">
+		<h1>KLC📽️INEMA</h1>
 	</div>
-</div>
-</didv>
-	
-<div class="bd2">
-<div class="body2">
-	<span class="img">
-		<img src="/imgs/444.png" style="height: 230px;">
-		<br>
-		<span class="title">
-		해리포터와 마법사의 돌
-		</span>
-	</span>
+	<br>
+	<div class="main2">
+		<h3>예매 완료되었습니다</h3>
+	</div>
+	<br>
 		
-	<span class="text2">
-		<a>영화: 해리포터와 마법사의 돌</a><br><br>
-		<a>극장: 김포공항점</a><br><br>
-		<a>날짜: 10월 20일</a><br><br>
-		<a>좌석: A7</a><br><br>
-		<a>결제: 14,000원</a><br><br>
-		<button class="btn">홈으로</button>
-	</span>
-</div>
-</div>
+	<div class="bd1">	
+		<div class="body1">
+			<div class="text1">
+				<a>예매정보</a>
+				<button class="recancel">예매취소</button>
+			</div>
+		</div>
+	</div>
+		
+	<div class="bd2">
+		<div class="body2">
+			<span class="img">
+				<img src="/imgs/444.png" style="height: 230px;">
+				<br>
+				<span class="title">
+				해리포터와 마법사의 돌
+				</span>
+			</span>
+				
+			<span class="text2">
+				<a>영화: 해리포터와 마법사의 돌</a><br><br>
+				<a>극장: 강남점</a><br><br>
+				<a>날짜: 10월 20일</a><br><br>
+				<a>좌석: A7</a><br><br>
+				<a>결제: 14,000원</a><br><br>
+				<button class="btn">홈으로</button>
+			</span>
+		</div>
+	</div>
 
 
 </body>
