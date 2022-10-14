@@ -22,14 +22,31 @@
  justify-content: center;
 }
 
-main2 {}
-
-td {
- text-align: center;
+.main2 {
+ display: flex;
+ justify-content: center;
+ text-align: left;
 }
 
-td:nth-child(2) {
- text-align: center;
+.tb {
+ display: flex;
+ justify-content: center;
+}
+
+.m-table {
+ float: left;
+ width: 300px;
+}
+
+.t-table {
+ float: left;
+ width: 300px;
+ margin-right: 0px;
+}
+
+.d-table {
+ float: left;
+ width: 300px;
 }
 
 </style>
@@ -45,6 +62,7 @@ td:nth-child(2) {
 	<h3>예매하기</h3>
 </div>
 
+<div class="tb">
 <table class="m-table">
 	<tr>
 		<th style="width: 15%">영화</th>
@@ -60,35 +78,36 @@ td:nth-child(2) {
 	
 </table>
 
-<table class="t-table">
-	<tr>
-		<th style="width: 15%">극장</th>
-	</tr>
-
-	<%	for(int i=0; i<theaterList.size(); i++) { %>
+	<table class="t-table">
+		<tr>
+			<th style="width: 15%">극장</th>
+		</tr>
 	
-	<tr>
-		<td><%=theaterList.get(i).getTheaterName() %></td>
-	</tr>
-
-	<%	} %>
+		<%	for(int i=0; i<theaterList.size(); i++) { %>
+		
+		<tr>
+			<td><%=theaterList.get(i).getTheaterName() %></td>
+		</tr>
 	
-</table>
-
-<table class="d-table">
-	<tr>
-		<th style="width: 15%">날짜</th>
-	</tr>
-
-	<%	for(int i=0; i<mdateList.size(); i++) { %>
+		<%	} %>
+		
+	</table>
 	
-	<tr>
-		<td><%=mdateList.get(i).getShowDate() %></td>
-	</tr>
-
-	<%	} %>
+	<table class="d-table">
+		<tr>
+			<th style="width: 15%">날짜</th>
+		</tr>
 	
-</table>
+		<%	for(int i=0; i<mdateList.size(); i++) { %>
+		
+		<tr>
+			<td><%=mdateList.get(i).getShowDate() %></td>
+		</tr>
+	
+		<%	} %>
+		
+	</table>
+</div>
 
 </body>
 </html>
