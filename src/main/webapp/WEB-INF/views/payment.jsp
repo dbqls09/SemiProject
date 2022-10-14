@@ -102,8 +102,6 @@ table span {
 
   //예약 좌석 정보 저장 리스트
   	List<String> temp = new ArrayList<>();
-  
-
     %>
 
 <div class="payment-wrapper">
@@ -156,7 +154,7 @@ table span {
 			</div>
 		
 			<%
-				for(String s : seat){
+				for(String s: seat) {
 					out.print( "좌석 : " + "<span>["+s+ "]");
 				}
 			%>

@@ -48,12 +48,25 @@
 
 .box {
  margin-left: 20px;
+ width: 280px;
+ height: 400px;
  background-color: #696969;
+}
+
+.img {
+ margin-left: 10px;
+ margin-top: 15px;
+}
+
+.text1 {
+ margin-left: 10px;
+ color: #fff;
 }
 
 .btn {
  display: block;
  margin: auto;
+ margin-top: 20px;
 }
 
 </style>
@@ -120,11 +133,15 @@
 	</table>
 
 <div class="box">
-	<img src="/imgs/444.png" style="height: 230px;">
+	<div class="img">
+		<img src="/imgs/444.png" style="height: 230px;">
+	</div>
 	<hr>
-	<span>해리포터와 마법사의 돌</span><br>
-	<span>극장: 강남점</span>
-	<span>날짜: 10월 20일</span>
+	<div class="text1">
+		<span>해리포터와 마법사의 돌</span><br><br>
+		<span>극장: 강남점</span>
+		<span style="padding-left: 20px;">날짜: 10월 20일</span>
+	</div>
 	<hr>
 	<button onclick="location.href='<%=request.getContextPath() %>/seat'" class="btn">좌석선택</button>
 </div>
