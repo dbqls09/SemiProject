@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../layout/header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,7 +96,7 @@ span {
 <div class="whole">
 <form action="/main/login" method="post" name="loginform">
 
-	<div class="title">
+	<div class="a">
 		<h1 style="color: white;">LOGIN</h1>
 	</div>
 
@@ -158,5 +159,4 @@ span {
 <!-- </form> -->
 </div>
 
-</body>
-</html>
+<%@ include file="../layout/footer.jsp" %>

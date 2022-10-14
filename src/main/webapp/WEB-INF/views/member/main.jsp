@@ -76,7 +76,7 @@
 	width: 1000px;
 	height: 1000px;
 /* 	border: 1px solid white; */
- 	margin: 40px;	 
+ 	margin: 50px;	 
 }
 
 .movie-item-button{
@@ -120,7 +120,6 @@ img {
 			<a class="nav-item" href="./main/agreement">회원가입</a> 
 			<% } %>
 			 
->>>>>>> branch '3team' of https://github.com/dbqls09/semiProject.git
 			<a class="nav-item" href="#">마이페이지</a> 
 			<a class="nav-item" href="#">고객센터</a> 
 			<a class="nav-item" href="#" style="border-right: none;">빠른예매</a>
@@ -138,35 +137,39 @@ img {
 		<div class="movie" style="float: left">
 		
 				<div class="photobox">
-				<span class="movie-item"></span>
+				<span class="movie-item">
 					<img src="resources/image/HarryPotter.jpg" height="400px;" width="270px">
-					<div id="btn1">
-						<button id="movie-item-button">바로 예매</button>
+					<div class="btn-item">
+						<button id="btn1">바로 예매</button>
 					</div>
+				</span>
 			    </div>
 
 			    <div class="photobox">
-				<span class="movie-item"></span> 
+				<span class="movie-item">
 					<img src="resources/image/Cooperation.jpg" height="400px;" width="270px">
-					<div id="btn1">
-						<button id="movie-item-button">바로 예매</button>
+					<div class="btn-item">
+						<button id="btn2">바로 예매</button>
 					</div>
+				</span>
 				</div>
 
 				<div class="photobox">
-				<span class="movie-item"></span> 
+				<span class="movie-item"> 
 					<img src="resources/image/LifeIsBeautiful.jpg" height="400px;" width="270px">
-					<div id="btn1">
-						<button id="movie-itme-button">바로 예매</button>
+					<div class="btn-item">
+						<button id="btn3">바로 예매</button>
 					</div>
+				</span> 
 				</div>
 
 				<div class="photobox">
-				<span class="movie-item"></span> 
+				<span class="movie-item">
 					<img src="resources/image/Avatar.jpg" height="400px" width="270px">
-					<div id="btn1">
-						<button id="movie-item-button">바로 예매</button>
+					<div class="btn-item">
+						<button id="btn4">바로 예매</button>
 					</div>
+					</span> 
 				</div>
 
 		</div>

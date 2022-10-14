@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
 <%@ include file="../layout/header.jsp" %>
-=======
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
->>>>>>> branch '3team' of https://github.com/dbqls09/semiProject
 <script type="text/javascript">
 
 $(document).ready(function(){
@@ -110,16 +107,14 @@ body {
 
 .joinForm {
   width:400px;
-<<<<<<< HEAD
-=======
-  height:700px;
->>>>>>> branch '3team' of https://github.com/dbqls09/semiProject
+/*   height:700px; */
   padding: 30px, 20px;
   background-color:#FFFFFF;
   text-align:center;
-  top:60%;
-  left:50%;
   border-radius: 15px;
+/*   justify-content: center; */
+  margin: 0 auto;
+  margin-bottom: 1%;
 }
 
 .joinForm h2 {
@@ -131,7 +126,9 @@ body {
   border-bottom: 2px solid #adadad;
   margin: 30px;
   padding: 10px 10px;
-  display:
+  display: flex;
+/*   justify-content: center; */
+/*   align-text: center; */
 }
 
 

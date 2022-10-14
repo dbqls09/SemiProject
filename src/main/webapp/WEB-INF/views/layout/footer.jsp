@@ -37,7 +37,8 @@
 }
 
 .list-inline-item-copyright {
-	text-decoration: none;
+	text-decoration: 
+	none;
 	font-size: 14px;
 	font-weight: 500px;
 	color: rgb(144, 144, 144);
