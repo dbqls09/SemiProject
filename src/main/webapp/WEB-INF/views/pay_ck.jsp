@@ -37,29 +37,30 @@
 .text1 {
  padding-top: 10px;
  padding-bottom: 10px;
- padding-left: 15px;
+ padding-left: 30px;
 }
 
 .body2 {
  width: 800px;
- height: 300px;
+ height: 340px;
  background-color: #DCDCDC; 
 }
 
 .img {
- margin-right: 50px;
- padding-top: 15px;
- padding-left: 15px;
+ margin-right: 40px;
+ padding-top: 30px;
+ padding-left: 30px;
  float: left;
 }
 
 .text2 {
- padding-top: 30px;
+ padding-top: 50px;
  float: left;
 }
 
-.title {
-
+.btn {
+ margin-left: 130px;
+ margin-top: 20px;
 }
 
 
@@ -89,19 +90,20 @@
 <div class="bd2">
 <div class="body2">
 	<span class="img">
-		<img src="/imgs/img1.png" style="height: 230px;">
+		<img src="/imgs/444.png" style="height: 230px;">
 		<br>
 		<span class="title">
-		아바타
+		해리포터와 마법사의 돌
 		</span>
 	</span>
 		
 	<span class="text2">
-		<a>영화: 아바타</a><br><br>
+		<a>영화: 해리포터와 마법사의 돌</a><br><br>
+		<a>극장: 김포공항점</a><br><br>
 		<a>날짜: 10월 20일</a><br><br>
 		<a>좌석: A7</a><br><br>
 		<a>결제: 14,000원</a><br><br>
-		<button>홈으로</button>
+		<button class="btn">홈으로</button>
 	</span>
 </div>
 </div>
