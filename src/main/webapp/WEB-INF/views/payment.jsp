@@ -142,14 +142,18 @@ table span {
 		
 		
 			<div class="info">
-			영화정보
+			<span>해리포터와 마법사의 돌</span><br><br>
+			<span>극장: 강남점</span><br><br>
+			<span>날짜: 10월 20일</span>
 			</div>
-		
+			
+			<div style="padding-left: 15px; ">
 			<%
 				for(String s: seat) {
 					out.print( "좌석 : " + "<span>["+s+ "]");
 				}
 			%>
+			</div>
 <!-- 			<span id='result' style="color: #6feaf6;"></span> -->
 			
 			<div class="btn-group">

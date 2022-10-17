@@ -8,5 +8,6 @@ import dto.Movie;
 public interface MovieDao {
 
 	public List<Movie> selectAll(Connection conn);
+	
 
 }
