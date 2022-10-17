@@ -42,7 +42,7 @@ public class QnaViewController extends HttpServlet {
 //		req.setAttribute("boardFile", boardFile);
 		
 		//VIEW 지정 및 응답 
-		req.getRequestDispatcher("/LHH/qnaview.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/member/qnaview.jsp").forward(req, resp);
 		
 		
 		

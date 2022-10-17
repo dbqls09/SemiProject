@@ -5,8 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>KLC📽️INEMA</title>
+<!-- icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- 부트스트랩 3 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- jQuery 2.2.4 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!-- icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<link rel="stylesheet" href="resources/footer.css" type="text/css">
+<!-- <link rel="stylesheet" href="resources/footer.css" type="text/css"> -->
+<link rel="stylesheet" href="/resources/footer.css" type="text/css">
 
 <style type="text/css">
 
@@ -52,7 +63,7 @@
 	font-size: 40px;
 	font-weight: bold;
 	color: rgb(255, 250, 240);
-/* 	border-bottom : 1px solid rgb(144, 144, 144); */
+/*  	border-bottom : 1px solid rgb(144, 144, 144);  */
 }
 
 .title1 {
@@ -101,10 +112,17 @@ img {
 	
 }
 
+.title > a {color: white;
+
+ text-decoration: none;
+ }
+
+
 </style>
 </head>
 
-<body bgcolor="#050040">
+<body style = "background-color: #050040; !important">
+
 	<div class="nav">
 <!-- 		<div class="title">KLC📽️INEMA</div> -->
 
@@ -116,12 +134,12 @@ img {
              
 			<%-- 비로그인 시 --%>
 			<% } else if( session.getAttribute("login") == null) {%>
-			<a class="nav-item" href="./main/login">로그인</a> 
-			<a class="nav-item" href="./main/agreement">회원가입</a> 
+			<a class="nav-item" href="<%=request.getContextPath()%>/main/login">로그인</a> 
+			<a class="nav-item" href="<%=request.getContextPath()%>/main/agreement">회원가입</a> 
 			<% } %>
 			 
-
-			<a class="nav-item" href="#">고객센터</a> 
+			<a class="nav-item" href="<%=request.getContextPath()%> /mypage">마이페이지</a> 
+			<a class="nav-item" href="<%=request.getContextPath()%> /customer">고객센터</a> 
 			<a class="nav-item" href="#" style="border-right: none;">빠른예매</a>
 			<!-- 			<a class="nav-item"><button onclick="location.href='/main/join'">회원가입</button> </a> -->
 		</div>
@@ -129,5 +147,7 @@ img {
 	</div>
 	
 	<div class="title1">
-	<div class="title">KLC📽️INEMA</div>
+		<div class="title"><a href="/main"> KLC📽️INEMA </a></div>
 	</div>
+	
+<div class="container">

@@ -229,98 +229,62 @@ public class MemberDaoImpl implements MemberDao {
 	public int update(Connection conn, Member member) {
 
 		String sql = "";
-		sql += "UPDATE MEMBER SET";
-		sql += "	user_pw = ?";
-		sql += "	, user_name = ?";
-		sql += "	, user_birth = ?";
-		sql += "	, user_email = ?";
-		sql += "	, user_phone = ?";
-		sql += " WHERE user_id = ?";
-		
-		int res = 0;
-
-		try {
-			ps = conn.prepareStatement(sql);
-			
-//			ps.setString(1, member.getUser_id());
-			ps.setString(1, member.getUser_pw());
-			ps.setString(2, member.getUser_name());
-			ps.setString(3, member.getUser_birth());
-			ps.setString(4, member.getUser_email());
-			ps.setString(5, member.getUser_phone());
-			ps.setString(6, member.getUser_id());
-			
-			res = ps.executeUpdate();
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-			
-		} finally {
-			JDBCTemplate.close(ps);
-		}
-		
-		return res;
+	      sql += "UPDATE member SET";
+	      sql += " user_pw = ? , user_name = ?, user_birth = ?, user_email = ?, user_phone = ?";
+	      sql += " WHERE user_id = ?";
+	      
+	      int result = 0;
+	      
+	      try {
+	         ps = conn.prepareStatement(sql);
+	         
+	         ps.setString(1, member.getUser_pw());
+	         ps.setString(2, member.getUser_name());
+	         ps.setString(3, member.getUser_birth());
+	         ps.setString(4, member.getUser_email());
+	         ps.setString(5, member.getUser_phone());
+	         ps.setString(6, member.getUser_id());
+	         
+	         result = ps.executeUpdate();
+	         
+	         
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         JDBCTemplate.close(ps);
+	      }
+	      
+	      return result;
+	                  
+	      
 	}
 	
 
 	@Override
 	public int delete(Connection conn, Member member) {
+		 String sql ="";
+	      sql += "DELETE FROM member";
+	      sql += " WHERE user_id = ?";
+	      
+	      int res = 0;
+	      
+	      try {
+	         ps = conn.prepareStatement(sql);
+	         
+	         ps.setString(1, member.getUser_id()); //아이디
+	         
+	         res = ps.executeUpdate();
+	         
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         JDBCTemplate.close(ps);
+	      }
+	      
+	      return res;
+	   }
+	   
 		
-		String sql = "";
-		sql += "DELETE FROM MEMBER ";
-		sql += " WHERE user_id = ?";
-		
-		int res = 0;
-		
-		try {
-//			PreparedStatement ps = conn.prepareStatement(sql);
-			ps = conn.prepareStatement(sql);
-			
-			ps.setString(1, member.getUser_id());
-			ps.setString(2, member.getUser_pw());
-			ps.setString(3, member.getUser_name());
-			ps.setString(4, member.getUser_birth());
-			ps.setString(5, member.getUser_email());
-			ps.setString(6, member.getUser_phone());
-			
-			res = ps.executeUpdate();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			
-		} finally {
-			JDBCTemplate.close(ps);
-		}
-		
-		return res;
-		
-		
-		
-	}
-//	
-//	@Override
-//    public Member getMovie(HttpServletRequest req) {
-//		
-//        Member member = new Member();
-//
-//        member.setMoive_code(req.getParameter("movie_actor"));
-//        member.setMovie_title(req.getParameter("movie_title")); 
-//        member.setMovie_age(req.getParameter("movie_age"));
-//        member.setMovie_director(req.getParameter("movie_director"));
-//        member.setMovie_genre(req.getParameter("movie_genre"));
-//        member.setMoive_actor(req.getParameter("movie_director"));
-//        member.setMovie_date(req.getParameter("movie_date"));
-//
-//        return member;
-//    }
-//
-//
-//    @Override
-//    public Member movieinfo(Member member) {
-//
-//        return memberDao.movieSelect(JDBCTemplate.getConnection(), member);
-//    }
-
 	@Override
 	public Member movieinfo(Connection conn, Member member) {
 		// TODO Auto-generated method stub

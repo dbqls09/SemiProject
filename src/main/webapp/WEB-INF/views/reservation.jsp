@@ -13,6 +13,22 @@
 <meta charset="UTF-8">
 <title>예매</title>
 
+<script type="text/javascript">
+
+let menuEvent = document.getElementById("movieList"); 
+
+menuEvent.addEventListener("mouseover", function (event) {
+  event.target.style.color = "#fbdd97";
+}, false);
+
+
+menuEvent.addEventListener("mouseout", function(event){
+  event.target.style.color = "white";
+}, false)
+
+
+</script>
+
 <%	List<Movie> movieList = (List) request.getAttribute("movieList"); %>
 <%	List<Theater> theaterList = (List) request.getAttribute("theaterList"); %>
 <%	List<Mdate> mdateList = (List) request.getAttribute("mdateList"); %>
@@ -24,13 +40,17 @@
  justify-content: center;
  text-align: left;
  color: #fff;
-}
+} 
 
 .tb {
  display: flex;
  justify-content: center;
+ color: #696969;
 }
 
+.th {
+ text-align: center;
+}
 .m-table {
  width: 300px;
 }
@@ -47,8 +67,9 @@
 .box {
  margin-left: 20px;
  width: 280px;
- height: 400px;
+ height: 430px;
  background-color: #696969;
+ border-radius: 10px;
 }
 
 .img {
@@ -72,9 +93,11 @@
 </head>
 <body>
 
-<br>
+<br><br>
 <div class="main1">
-	<h3>예매하기</h3>
+	<div class="main2">
+		<h3 style="font-size: 30px; color: #f5f5f5">예매하기</h3>
+	</div>
 </div>
 
 <br>
@@ -82,45 +105,45 @@
 <div class="tb">
 <table class="m-table">
 	<tr>
-		<th bgcolor="#dcdcdc" style="width: 15%">영화</th>
+		<th bgcolor="#f5f5f5" style="width: 15%">영화</th>
 	</tr>
 
 	<%	for(int i=0; i<movieList.size(); i++) { %>
 	
 	<tr>
-		<td bgcolor="#dcdcdc"><%=movieList.get(i).getMovie_age() %> <%=movieList.get(i).getMovie_title() %></td>
+		<td bgcolor="#f5f5f5" color="#696969" onmouseover="this.style.background='#696969', this.style.color='#fff'" onmouseout="this.style.background='#f5f5f5', this.style.color='#696969'" style="padding-left: 10px;"><%=movieList.get(i).getMovie_age() %> <%=movieList.get(i).getMovie_title() %></td>
 	</tr>
 
 	<%	} %>
 	
 </table>
 
-	<table class="t-table">
-		<tr>
-			<th bgcolor="#dcdcdc" style="width: 15%">극장</th>
-		</tr>
+<table class="t-table">
+	<tr>
+		<th bgcolor="#f5f5f5" style="width: 15%">극장</th>
+	</tr>
 	
-		<%	for(int i=0; i<theaterList.size(); i++) { %>
-		<tr>
-			<td bgcolor="#dcdcdc"><%=theaterList.get(i).getTheaterName() %></td>
-		</tr>
-		<%	} %>
-		<tr style="height: 76px;"><td bgcolor="#dcdcdc"></td></tr>
-		
-	</table>
+	<%	for(int i=0; i<theaterList.size(); i++) { %>
+	<tr>
+		<td bgcolor="#f5f5f5" color="#696969" onmouseover="this.style.background='#696969', this.style.color='#fff'" onmouseout="this.style.background='#f5f5f5', this.style.color='#696969'" style="padding-left: 10px;"><div class="tt"><%=theaterList.get(i).getTheaterName() %></div></td>
+	</tr>
+	<%	} %>
+	<tr style="height: 76px;"><td bgcolor="#f5f5f5" onmouseover="this.style.background='#696969'" onmouseout="this.style.background='#f5f5f5'"></td></tr>
 	
-	<table class="d-table" >
-		<tr>
-			<th bgcolor="#dcdcdc" style="width: 15%">날짜</th>
-		</tr>
-		<%	for(int i=0; i<mdateList.size(); i++) { %>
-		<tr style="border-collapse:collapse;">
-			<td bgcolor="#dcdcdc" ><%=mdateList.get(i).getShowDate() %></td>
-		</tr>
-		<%	} %>
-		<tr style="height: 76px;"><td bgcolor="#dcdcdc"></td></tr>
-		
-	</table>
+</table>
+	
+<table class="d-table" >
+	<tr>
+		<th bgcolor="#f5f5f5" style="width: 15%">날짜</th>
+	</tr>
+	<%	for(int i=0; i<mdateList.size(); i++) { %>
+	<tr>
+		<td bgcolor="#f5f5f5" color="#696969" onmouseover="this.style.background='#696969', this.style.color='#fff'" onmouseout="this.style.background='#f5f5f5', this.style.color='#696969'" style="padding-left: 10px;"><%=mdateList.get(i).getShowDate() %></td>
+	</tr>
+	<%	} %>
+	<tr style="height: 76px;"><td bgcolor="#f5f5f5" onmouseover="this.style.background='#696969'" onmouseout="this.style.background='#f5f5f5'"></td></tr>
+	
+</table>
 
 <div class="box">
 	<div class="img">
@@ -133,7 +156,7 @@
 		<span style="padding-left: 20px;">날짜: 10월 20일</span>
 	</div>
 	<hr>
-	<button onclick="location.href='<%=request.getContextPath() %>/seat'" class="btn">좌석선택</button>
+	<button onclick="location.href='<%=request.getContextPath() %>/seat'" class="btn" style="margin-top: 30px; height: 30px;" >좌석선택</button>
 </div>
 </div>
 

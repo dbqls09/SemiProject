@@ -15,6 +15,12 @@
  display: flex;
  justify-content: center;
  color: #fff;
+ font-size: 40px;
+}
+
+.etitle{
+ justify-content: center;
+ text-align: center;
 }
 
 .bd1 {
@@ -31,18 +37,21 @@
  width: 800px;
  background-color: #2F4F4F;
  color: White;
+ border-radius: 10px;
 }
 
 .text1 {
  padding-top: 10px;
  padding-bottom: 10px;
  padding-left: 30px;
+ height: 40px;
 }
 
 .body2 {
  width: 800px;
  height: 340px;
  background-color: #DCDCDC; 
+ border-radius: 10px;
 }
 
 .img {
@@ -67,17 +76,18 @@
 
 </head>
 <body>
+<%
+	String seat = (String)session.getAttribute("seat");
+%>
 
-	<br>
 	<div class="main">
-		<h3>예매 완료되었습니다</h3>
+		<h1>예매 완료되었습니다</h1>
 	</div>
-	<br>
 		
 	<div class="bd1">	
 		<div class="body1">
 			<div class="text1">
-				<a>예매정보</a>
+				<h4 style="font-size: 20px; margin-top: 5px;">예매정보</h4>
 			</div>
 		</div>
 	</div>
@@ -87,17 +97,17 @@
 			<span class="img">
 				<img src="/imgs/444.png" style="height: 230px;">
 				<br>
-				<span class="mtitle">
-				해리포터와 마법사의 돌
-				</span>
+				<div class="etitle">
+				Harry Potter
+				</div>
 			</span>
 				
 			<span class="text2">
-				<a>영화: 해리포터와 마법사의 돌</a><br><br>
-				<a>극장: 강남점</a><br><br>
-				<a>날짜: 10월 20일</a><br><br>
-				<a>좌석: A7</a><br><br>
-				<a>결제: 14,000원</a><br><br>
+				<span>영화: 해리포터와 마법사의 돌</span><br><br>
+				<span>극장: 강남점</span><br><br>
+				<span>날짜: 10월 20일</span><br><br>
+				<span>좌석: <%=seat %></span><br><br>
+				<span>결제: 14,000원</span><br><br>
 				<button class="btn" onclick="location.href='<%=request.getContextPath() %>/main'">홈으로</button>
 			</span>
 		</div>

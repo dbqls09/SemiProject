@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>KLC📽️INEMA</title>
 
 <link rel="stylesheet" href="resources/footer.css" type="text/css">
@@ -123,6 +124,12 @@ img {
 /* 	width: 100px; */
 }
 
+.title > a {color: white;
+
+ text-decoration: none;
+ }
+
+
 #btn1 {
 	width: 200px;
 }
@@ -161,7 +168,7 @@ img {
 			%>
 
 			<a class="nav-item" href="./mypage">마이페이지</a> <a class="nav-item"
-				href="#">고객센터</a> <a class="nav-item" href="#"
+				href="/customer">고객센터</a> <a class="nav-item" href="#"
 				style="border-right: none;">빠른예매</a>
 			<!-- 			<a class="nav-item"><button onclick="location.href='/main/join'">회원가입</button> </a> -->
 		</div>
@@ -169,13 +176,13 @@ img {
 	</div>
 
 	<div class="title1">
-		<div class="title">KLC📽️INEMA</div>
+		<div class="title"> <a href="/main">KLC📽️INEMA</a></div>
 	</div>
 
 	<div class="main">
 		<div class="movie">
 
-			<form action="/main/movie" method="get" class="movieForm">
+			<form action="/movie/view" method="get" class="movieForm">
 			<div class="box-whole">
 				<div class="ranking">
 				<div>1</div>
@@ -192,7 +199,7 @@ img {
 				</div>
 			</form>
 
-			<form action="/main/movie" method="get" class="movieForm">
+			<form action="/movie/view" method="get" class="movieForm">
 			<div class="box-whole">
 			<div class="ranking">
 				<div>2</div>
@@ -209,7 +216,7 @@ img {
 				</div>
 			</form>
 
-			<form action="/main/movie" method="get" class="movieForm">
+			<form action="/movie/view" method="get" class="movieForm">
 			<div class="box-whole">
 			<div class="ranking">
 				<div>3</div>
@@ -226,7 +233,7 @@ img {
 				</div>
 			</form>
 
-			<form action="/main/movie" method="get" class="movieForm">
+			<form action="/movie/view" method="get" class="movieForm">
 			<div class="box-whole">
 			<div class="ranking">
 				<div>4</div>

@@ -1,6 +1,6 @@
-<%@page import="dao.impl.MemberDaoImpl"%>
-<%@page import="dao.face.MemberDao"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="dao.face.MemberDao"%>
+<%@page import="dao.impl.MemberDaoImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -42,24 +42,35 @@
 		if(result == 1){
 			out.print("사용 가능한 아이디");
 	%>
+	<fieldset>
+	<form action="/id/check" method="get" name="wfr">
+		ID : <input type="text" name="user_id" value="<%=user_id%>">
 		<input type="button" value="아이디 사용하기" onclick="result();">
+
+	</form>
+	</fieldset>	
 	<%
 		 
 		}else if(result ==0){
 			out.print("중복된 아이디");
-		}else{
+	%>
+	<fieldset>
+		<form action="/id/check" method="get" name="wfr">
+			ID : <input type="text" name="user_id" value="<%=user_id%>">
+			<input type="submit" value="중복 확인">	 
+			
+		</form>
+	
+	</fieldset>	
+		
+	<%	}else{
 			out.print("에러발새에");
 		}
 	%>
 
-<fieldset>
+
 	
-	<form action="/id/check" method="get" name="wfr">
-		ID : <input type="text" name="user_id" value="<%=user_id%>">
-		<input type="submit" value="중복 확인">	 
-		
-	</form>
-</fieldset>	
+
 
 
 

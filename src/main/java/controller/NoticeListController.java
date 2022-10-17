@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -28,16 +27,16 @@ public class NoticeListController extends HttpServlet {
 	
 				//공지사항 전체 조회
 				List<Notice> noticeList = noticeService.getList();
+				System.out.println("noticeList: "+ noticeList);
 				
 		
 				//조회결과 MODEL값 전달
 				req.setAttribute("noticeList", noticeList);
 				
-				
-				//View 지정 및 응답
-				req.getRequestDispatcher("/member/noticelist.jsp").forward(req, resp);
-				
+			
+				//View 지정 및 응답			
 	
+				req.getRequestDispatcher("/WEB-INF/views/member/noticelist.jsp").forward(req, resp);
 	}
 
 }

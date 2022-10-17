@@ -36,7 +36,7 @@ public class QnaUpdateController extends HttpServlet {
 		req.setAttribute("updateQna", updateQna);
 		
 		//VIEW 지정 및 응답 
-		req.getRequestDispatcher("/LHH/qnaupdate.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/member/qnaupdate.jsp").forward(req, resp);
 		
 	
 	}

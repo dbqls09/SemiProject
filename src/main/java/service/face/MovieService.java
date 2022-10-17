@@ -15,8 +15,8 @@ public interface MovieService {
 	 */
 	public List<Movie> getList();
 	
-	public Movie getMovie(HttpServletRequest req);
+	public Movie getMovieCode(HttpServletRequest req);
 	
-	public Movie movieinfo(Movie movie);
+	public Movie view(Movie movie);
 	
 }

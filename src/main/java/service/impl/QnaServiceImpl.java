@@ -97,26 +97,26 @@ public class QnaServiceImpl implements QnaService {
 	
 	@Override
 	public void write(HttpServletRequest req) {
+	
 		
 		Qna qna = new Qna();
-		//제목처리
-		qna.setQna_title(req.getParameter("qna_title")); //parameter는 form안에있는 input name
-		
-		//본문 처리
-		qna.setQna_content(req.getParameter("qna_content"));//parameter는 form안에있는 textarea name
+	      //제목처리
+	      qna.setQna_title(req.getParameter("qna_title")); //parameter는 form안에있는 input name
+	      
+	      //본문 처리
+	      qna.setQna_content(req.getParameter("qna_content"));//parameter는 form안에있는 textarea name
+	   
+	      //작성자 ID처리
+	      qna.setQna_userid( (String) req.getSession().getAttribute("user_id"));
+	      
+	      Connection conn = JDBCTemplate.getConnection();
+	      
+	      if( qnaDao.insert(conn, qna) > 0) {
+	         JDBCTemplate.commit(conn);
+	      } else {
+	         JDBCTemplate.rollback(conn);
+	      }
 	
-		//작성자 ID처리
-//		qna.setQna_userid( (String) req.getSession().getAttribute("qna_userid"));
-		
-		Connection conn = JDBCTemplate.getConnection();
-		
-		if( qnaDao.insert(conn, qna) > 0) {
-			JDBCTemplate.commit(conn);
-		} else {
-			JDBCTemplate.rollback(conn);
-		}
-		
-		
 	}
 	
 	

@@ -1,67 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@include file="../layout/header.jsp" %>
-
+<%@include file="../layout/header2.jsp" %>
+<link rel="stylesheet" type="text/css" href="../../resources/css/style.css" >
 <style>
-.innerwrap {
-    width: 1100px;
-    margin: 0 auto;
-    display:flex;
-}
 
-.left{width:30%; }
-.right{width:70%;margin-left: 80px;  }
-.board{
-	justify-content: center;
-	align-items: center;
-}
-
-.homeBox{
-	margin-bottom: 50px;
-	border-radius: 0 0 1rem 1rem;
-	border: 2px solid #d7d8da;
-	border-top: 0;
-}
-.home,.home1,.home2,.home3{
-	color: #f1f1f1;   
-    padding: 20px;
-    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
-}
-.home{
-	background-color: #f2f4f5;
-}
-.home1{
-	height: 50px;
-	background-color: #3c3c3c;
-	border-radius: 0.8rem 0.8rem 0 0;
-	text-align: center;
-	font-weight: 800;
-}
-
-.home2{
-	color: #333;
-	background-color: #f2f4f5;
-	border-radius: 0 0 0 0;
-}
-.home2 > div{
-	margin: 0;
-	padding: 1rem;
-	border-bottom: 1px solid #d7d8da;
-	cursor: pointer;
-}
-.home2 > div:hover{
-	color: #317188;
-	background-color: #ffffff;
-}
-.home3{
-	color: #666666;
-	background-color: #ffffff;
-	border-radius: 0 0 0.8rem 0.8rem;
-	border-top: 1px solid #d7d8da;
-}
-
-.home3 > h3, p {text-align: center;}
 .custo-main .main-block .block-content {
     float: left;
     width: 280px;
@@ -99,7 +42,7 @@
 
 </style>
 
-<div class="top"><h2>마이페이지</h2></div>
+<div class="top"><h2 style="color:white;">마이페이지</h2></div>
 <div class="innerwrap">
 	<div class="left">
  		<div class="home1">마이페이지</div>
@@ -107,7 +50,7 @@
 	
 	    <div class="home2">
 	      <div onclick="location='<%=request.getContextPath() %>/mypage'">마이페이지 홈</div>
-	      <div onclick="location='<%=request.getContextPath() %>/mypage/update'">내 정보 수정</div>
+	      <div onclick="location='<%=request.getContextPath() %>/member/update'">내 정보 수정</div>
 	      <div onclick="location='<%=request.getContextPath() %>/mypage/res'">예매 내역</div>
 	    </div>
 	    
@@ -128,7 +71,7 @@
 		<div class="block-content">
 			<a href="<%=request.getContextPath() %>/member/update" title="회원 정보 페이지로 이동">
 				<p>
-					<strong>회원 정보</strong>
+					<strong style="color:white;">회원 정보</strong>
 					회원 정보 수정 <br>회원탈퇴 바로가기
 				</p>
 			</a>
@@ -136,7 +79,7 @@
 		<div class="block-content">
 			<a href="<%=request.getContextPath() %>/mypage/res" title="예매 조회 페이지로 이동">
 				<p>
-					<strong>예매내역</strong>
+					<strong style="color:white;">예매내역</strong>
 					예매내역 확인을 <br>하실 수 있어요
 				</p>
 			</a>

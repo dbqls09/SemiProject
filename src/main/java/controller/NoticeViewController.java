@@ -39,8 +39,7 @@ public class NoticeViewController extends HttpServlet {
 		
 		
 		//VIEW 지정 및 응답 
-		req.getRequestDispatcher("/LHH/noticeview.jsp").forward(req, resp);
-		
+		req.getRequestDispatcher("/WEB-INF/views/member/noticeview.jsp").forward(req, resp);
 	}
 
 }

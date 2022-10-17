@@ -10,6 +10,7 @@ import java.util.List;
 import common.JDBCTemplate;
 import dao.face.QnaDao;
 import dto.Qna;
+import dto.QnaFile;
 import util.Paging;
 
 public class QnaDaoImpl implements QnaDao {
@@ -196,29 +197,35 @@ public class QnaDaoImpl implements QnaDao {
 		
 	@Override
 	public int insert(Connection conn, Qna qna) {
-//		System.out.println("insert(conn, qna)");
+		
 		String sql ="";
-		sql += "INSERT INTO qna( qna_no, qna_title, qna_content )";
-		sql += "	VALUES ( qna_seq.nextval, ?, ?)";
+	      sql += "INSERT INTO qna( qna_no, qna_title, qna_content, qna_userid )";
+	      sql += "   VALUES ( qna_seq.nextval, ?, ? ,?)";
 
-		int res = 0;
-		
-		try {
-			ps = conn.prepareStatement(sql);
-			
-			ps.setString(1, qna.getQna_title());
-			ps.setString(2, qna.getQna_content());
-			
-			res = ps.executeUpdate();
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			JDBCTemplate.close(ps);
-		}
-		
-		return res;
+	      int res = 0;
+	      
+	      try {
+	         ps = conn.prepareStatement(sql);
+	         
+	         ps.setString(1, qna.getQna_title());
+	         ps.setString(2, qna.getQna_content());
+	         ps.setString(3, qna.getQna_userid());
+	         
+	         res = ps.executeUpdate();
+	         
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         JDBCTemplate.close(ps);
+	      }
+	      
+	      return res;
+	      
 	}
+		
+		
+		
+		
 	
 	@Override
 	public int update(Connection conn, Qna qna) {

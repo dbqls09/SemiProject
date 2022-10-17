@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <!-- footer style -->
-<!-- <link rel="stylesheet" href="resources/footer.css" type="text/css"> -->
+<link rel="stylesheet" href="resources/footer.css" type="text/css">
 <style type="text/css">
 
 .footer {
@@ -68,7 +68,7 @@
 	color: #b4b4b4;
 }
 </style>
-
+</div>
 <!-- footer -->
 <footer class="footer">
 	<div class="container">

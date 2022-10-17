@@ -124,24 +124,21 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void delete(HttpServletRequest req) {
 		
-		Member member = new Member();
+	      Member member = new Member();
+	      
+	      member.setUser_id(req.getParameter("user_id"));
 
-		member.setUser_id(req.getParameter("user_id"));
-		member.setUser_pw(req.getParameter("user_pw"));
-		member.setUser_name(req.getParameter("user_name"));
-		member.setUser_birth(req.getParameter("user_birth"));
-		member.setUser_email(req.getParameter("user_email"));
-		member.setUser_phone(req.getParameter("user_phone"));
-		
-		Connection conn = JDBCTemplate.getConnection();
-						
-		if( memberDao.update(conn, member) > 0 ) {
-			JDBCTemplate.commit(conn);
-		} else {
-			JDBCTemplate.rollback(conn);
-		}
-	}
-
+	      
+	      
+	      Connection conn = JDBCTemplate.getConnection();
+	      
+	      if( memberDao.delete(conn, member) > 0) {
+	         JDBCTemplate.commit(conn);
+	      } else {
+	         JDBCTemplate.rollback(conn);
+	      }
+	      
+	  }
 //	@Override
 //	public Member getuser_id(HttpServletRequest req) {
 //		// TODO Auto-generated method stub

@@ -18,8 +18,9 @@ public class NoticeServiceImpl implements NoticeService {
 	
 	@Override
 	public List<Notice> getList() {
-		
 		return noticeDao.selectAll(JDBCTemplate.getConnection());
+		
+		
 	}  
 	
 	@Override
@@ -27,9 +28,8 @@ public class NoticeServiceImpl implements NoticeService {
 		//전달파라미터를 저장할 객체 생성
 		Notice notice = new Notice();
 		
-		String param = req.getParameter("notice_no"); //전달받은 boardno String으로 
-													//->전달파라미터의 타입은 String
-		
+		String param = req.getParameter("notice_no");
+												
 		if(param != null && !"".equals("param")) {
 			notice.setNotice_no(Integer.parseInt(param));
 		} else {

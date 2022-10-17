@@ -9,6 +9,8 @@ public interface MovieDao {
 
 	public List<Movie> selectAll(Connection conn);
 	
-	public Movie movieinfo(Connection conn, Movie movie);
+	public Movie selectMovieCode(Connection conn, Movie movie);
+	
+	
 
 }

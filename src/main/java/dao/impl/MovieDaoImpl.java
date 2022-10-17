@@ -38,7 +38,7 @@ public class MovieDaoImpl implements MovieDao {
 				
 				//결과값 한 행씩 처리
 				m.setMovie_title(rs.getString("movie_title"));
-				m.setMovie_age(rs.getString("movie_age"));
+				m.setMovie_age(rs.getInt("movie_age"));
 				
 				//리스트에 결과값 저장
 				movieList.add(m);
@@ -57,7 +57,7 @@ public class MovieDaoImpl implements MovieDao {
 	}
 
 	@Override
-	public Movie movieinfo(Connection conn, Movie movie) {
+	public Movie selectMovieCode(Connection conn, Movie movie) {
 		
 		String sql ="";
 	      sql += "SELECT * FROM MOVIE";
@@ -68,19 +68,19 @@ public class MovieDaoImpl implements MovieDao {
 	      try {
 	         ps=conn.prepareStatement(sql);
 	         
-	         ps.setString(1, movie.getMovie_code());         
+	         ps.setInt(1, movie.getMovie_code());         
 	         rs=ps.executeQuery();
 	         
 	         while(rs.next()) {
 	            result = new Movie();
 	            
 	            result.setMovie_title(rs.getString("movie_title"));
-	            result.setMovie_code(rs.getString("movie_code"));
-	            result.setMovie_age(rs.getString("movie_age"));
+	            result.setMovie_code(rs.getInt("movie_code"));
+	            result.setMovie_age(rs.getInt("movie_age"));
 	            result.setMovie_date(rs.getString("movie_date"));
 	            result.setMovie_director(rs.getString("movie_director"));
 	            result.setMovie_genre(rs.getString("movie_genre"));
-	            result.setMoive_actor(rs.getString("moive_actor"));
+	            result.setMovie_actor(rs.getString("movie_actor"));
 	         }
 	      } catch (SQLException e) {
 	         e.printStackTrace();

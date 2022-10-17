@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="../LHH/style.css" >
-<%@include file="../layout/header.jsp" %>
+<link rel="stylesheet" type="text/css" href="../../resources/css/style.css" >
+<%@include file="../layout/header2.jsp" %>
 
 
-<div class="top"><h2>마이페이지</h2></div>
+<div class="top"><h2 style="color: white;">마이페이지</h2></div>
 <div class="innerwrap">
 	<div class="left">
  		<div class="home1">마이페이지</div>
@@ -26,7 +26,7 @@
 	
 	<div class="right" style="margin-top: 20px;">
 	
-	<h3>예매내역</h3>
+	<h3 style="color:white;">예매내역</h3>
 	<hr>
 	
 <table class="table table-boarderd">
@@ -38,10 +38,10 @@
 	</tr>
 		
 	
-	<tr>
+	<tr class="active">
 	<td>해리포터</td>
 	<td>강남</td>
-	<td>10월30일</td>
+	<td>10월20일</td>
 	<td>1</td>
 	</tr>
 	

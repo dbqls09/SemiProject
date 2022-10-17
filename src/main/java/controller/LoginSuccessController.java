@@ -8,34 +8,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dto.Member;
 import service.face.MemberService;
 import service.impl.MemberServiceImpl;
 
-@WebServlet("/member/update")
-public class MemberUpdateController extends HttpServlet {
+/**
+ * Servlet implementation class LoginSuccessController
+ */
+@WebServlet("/main/login/success")
+public class LoginSuccessController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
+	//서비스 객체 생성
 	private MemberService memberService = new MemberServiceImpl();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		req.setCharacterEncoding("UTF-8");
-		
-		req.getRequestDispatcher("/WEB-INF/views/member/memberupdate.jsp").forward(req, resp);
-		
+		req.getRequestDispatcher("/WEB-INF/views/member/loginsuccess.jsp").forward(req, resp);
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
+	
+	
 
-	      
-	      memberService.update(req);
-	      
-	      resp.sendRedirect("/main");		
-		
-	}
-	
 }

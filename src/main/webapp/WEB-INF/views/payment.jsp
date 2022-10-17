@@ -83,6 +83,15 @@ table span {
 }
 </style>
 
+<script type="text/javascript">
+
+function payck() {
+	alert("결제 완료 되었습니다");
+	window.location.href = "<%=request.getContextPath() %>/pay_ck";
+}
+
+</script>
+
 </head>
 <body>
     <%
@@ -90,10 +99,12 @@ table span {
   	List<String> list = new ArrayList<>();
     
   //사용자가 예매를 희망하는 좌석 정보가 들어있는 배열
-  	String[] seat = request.getParameterValues("seat");
+  	String seat = request.getParameter("seat");
 
   //예약 좌석 정보 저장 리스트
   	List<String> temp = new ArrayList<>();
+  	
+  	session.setAttribute("seat", seat);
     %>
 
 <div class="payment-wrapper">
@@ -148,17 +159,13 @@ table span {
 			</div>
 			
 			<div style="padding-left: 15px; ">
-			<%
-				for(String s: seat) {
-					out.print( "좌석 : " + "<span>["+s+ "]");
-				}
-			%>
+			<%=seat %>
 			</div>
 <!-- 			<span id='result' style="color: #6feaf6;"></span> -->
 			
 			<div class="btn-group">
 			<button onclick="location.href='<%=request.getContextPath() %>/seat'" class="btn">이전</button>
-			<button onclick="location.href='<%=request.getContextPath() %>/pay_ck'" type ="submit" class="btn">결제</button>
+			<button onclick="payck()" type ="submit" class="btn">결제</button>
 			</div>
 			
 		</div>

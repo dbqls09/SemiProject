@@ -19,7 +19,7 @@ public class NoticeDaoImpl implements NoticeDao {
 	
 	@Override
 	public List<Notice> selectAll(Connection conn) {
-		System.out.println("selectAll(conn)");
+		System.out.println(" List<Notice> selectAll()");
 				//SQL 작성
 				String sql = "";
 				sql += "SELECT * FROM notice";

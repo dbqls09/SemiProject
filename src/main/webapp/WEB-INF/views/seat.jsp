@@ -79,30 +79,11 @@
 
 function getCheckboxValue()  {
 	
-	//체크박스 체크된 개 수 구한 뒤 허용 갯 수 넘으면 체크박스 외 disabled 
-	var cnt=$("input:checkbox[name=seat]:checked").length;
-
-	if(cnt>3){
-		$(":checkbox:not(:checked)").attr("disabled", "disabled");
-
-	}else {
-	        $("input[name=chk]:checkbox").removeAttr("disabled");
-	    }
-	
 	  // 선택된 목록 가져오기
 	  const query = 'input[name="seat"]:checked';
 	  const selectedEls = 
 	      document.querySelectorAll(query);
 	  
-	  // 선택된 목록에서 value 찾기
-	  let result = '';
-	  selectedEls.forEach((el) => {
-	    result += el.value + ' ' + ' / ';
-	  });
-	  
-	  // 출력
-	  document.getElementById('result').innerText
-	    = result;
 	}
 	
 

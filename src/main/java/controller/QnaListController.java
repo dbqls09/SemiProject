@@ -42,7 +42,7 @@ public class QnaListController extends HttpServlet {
 				req.setAttribute("paging", paging);
 				
 				//View 지정 및 응답
-				req.getRequestDispatcher("/LHH/qnalist.jsp").forward(req, resp);
+				req.getRequestDispatcher("/WEB-INF/views/member/qnalist.jsp").forward(req, resp);
 				
 	
 	
