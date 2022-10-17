@@ -104,6 +104,6 @@
 		</div>
 	</div>
 
+<br><br><br><br><br>
 
-</body>
-</html>
+<%@ include file="./layout/footer.jsp" %>

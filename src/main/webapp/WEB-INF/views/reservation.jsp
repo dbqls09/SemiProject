@@ -23,6 +23,7 @@
  display: flex;
  justify-content: center;
  text-align: left;
+ color: #fff;
 }
 
 .tb {
@@ -74,6 +75,7 @@
 </head>
 <body>
 
+<br>
 <div class="main1">
 	<h3>예매하기</h3>
 </div>
@@ -141,5 +143,6 @@
 </div>
 </div>
 
-</body>
-</html>
+<br><br><br><br><br>
+
+<%@ include file="./layout/footer.jsp" %>
