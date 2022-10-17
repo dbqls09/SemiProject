@@ -33,18 +33,15 @@
 
 .m-table {
  width: 300px;
- color: #fff;
 }
 
 .t-table {
  width: 300px;
  margin-right: 0px;
- color: #fff;
 }
 
 .d-table {
  width: 300px;
- color: #fff;
 }
 
 .box {
@@ -85,13 +82,13 @@
 <div class="tb">
 <table class="m-table">
 	<tr>
-		<th style="width: 15%">영화</th>
+		<th bgcolor="#dcdcdc" style="width: 15%">영화</th>
 	</tr>
 
 	<%	for(int i=0; i<movieList.size(); i++) { %>
 	
 	<tr>
-		<td><%=movieList.get(i).getMovieAge() %> <%=movieList.get(i).getMovieTitle() %></td>
+		<td bgcolor="#dcdcdc"><%=movieList.get(i).getMovieAge() %> <%=movieList.get(i).getMovieTitle() %></td>
 	</tr>
 
 	<%	} %>
@@ -100,31 +97,28 @@
 
 	<table class="t-table">
 		<tr>
-			<th style="width: 15%">극장</th>
+			<th bgcolor="#dcdcdc" style="width: 15%">극장</th>
 		</tr>
 	
 		<%	for(int i=0; i<theaterList.size(); i++) { %>
-		
 		<tr>
-			<td><%=theaterList.get(i).getTheaterName() %></td>
+			<td bgcolor="#dcdcdc"><%=theaterList.get(i).getTheaterName() %></td>
 		</tr>
-	
 		<%	} %>
+		<tr style="height: 76px;"><td bgcolor="#dcdcdc"></td></tr>
 		
 	</table>
 	
-	<table class="d-table">
+	<table class="d-table" >
 		<tr>
-			<th style="width: 15%">날짜</th>
+			<th bgcolor="#dcdcdc" style="width: 15%">날짜</th>
 		</tr>
-	
 		<%	for(int i=0; i<mdateList.size(); i++) { %>
-		
-		<tr>
-			<td><%=mdateList.get(i).getShowDate() %></td>
+		<tr style="border-collapse:collapse;">
+			<td bgcolor="#dcdcdc"><%=mdateList.get(i).getShowDate() %></td>
 		</tr>
-	
 		<%	} %>
+		<tr style="height: 76px;"><td bgcolor="#dcdcdc"></td></tr>
 		
 	</table>
 
