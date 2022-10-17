@@ -43,8 +43,9 @@
 .payment-total {
 	width: 280px;
 	height: 500px;
-	border: 1px solid #F0FFFF;
-	background-color: #F0FFFF;
+	border: 1px solid #696969;
+	background-color: #696969;
+	color: #fff;
 	border-radius: 3em;
 	position: relative;
 	margin-left: 1000px
