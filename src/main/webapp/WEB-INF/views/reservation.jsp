@@ -115,7 +115,7 @@
 		</tr>
 		<%	for(int i=0; i<mdateList.size(); i++) { %>
 		<tr style="border-collapse:collapse;">
-			<td bgcolor="#dcdcdc"><%=mdateList.get(i).getShowDate() %></td>
+			<td bgcolor="#dcdcdc" ><%=mdateList.get(i).getShowDate() %></td>
 		</tr>
 		<%	} %>
 		<tr style="height: 76px;"><td bgcolor="#dcdcdc"></td></tr>
