@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ include file="./layout/header.jsp" %>    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +14,7 @@
 .main {
  display: flex;
  justify-content: center;
-}
-
-.main2 {
- display: flex;
- justify-content: center;
+ color: #fff;
 }
 
 .bd1 {
@@ -69,11 +68,8 @@
 </head>
 <body>
 
-	<div class="main">
-		<h1>KLC📽️INEMA</h1>
-	</div>
 	<br>
-	<div class="main2">
+	<div class="main">
 		<h3>예매 완료되었습니다</h3>
 	</div>
 	<br>
@@ -92,7 +88,7 @@
 			<span class="img">
 				<img src="/imgs/444.png" style="height: 230px;">
 				<br>
-				<span class="title">
+				<span class="mtitle">
 				해리포터와 마법사의 돌
 				</span>
 			</span>

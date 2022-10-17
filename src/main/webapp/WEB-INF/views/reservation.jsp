@@ -4,7 +4,9 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
+<%@ include file="./layout/header.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,12 +19,7 @@
 
 <style type="text/css">
 
-.main {
- display: flex;
- justify-content: center;
-}
-
-.main2 {
+.main1 {
  display: flex;
  justify-content: center;
  text-align: left;
@@ -35,15 +32,18 @@
 
 .m-table {
  width: 300px;
+ color: #fff;
 }
 
 .t-table {
  width: 300px;
  margin-right: 0px;
+ color: #fff;
 }
 
 .d-table {
  width: 300px;
+ color: #fff;
 }
 
 .box {
@@ -74,13 +74,7 @@
 </head>
 <body>
 
-<div class="main">
-	<h1>KLC📽️INEMA</h1>
-</div>
-
-<br>
-
-<div class="main2">
+<div class="main1">
 	<h3>예매하기</h3>
 </div>
 
