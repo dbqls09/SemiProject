@@ -88,7 +88,7 @@
 	<%	for(int i=0; i<movieList.size(); i++) { %>
 	
 	<tr>
-		<td bgcolor="#dcdcdc"><%=movieList.get(i).getMovieAge() %> <%=movieList.get(i).getMovieTitle() %></td>
+		<td bgcolor="#dcdcdc"><%=movieList.get(i).getMovie_age() %> <%=movieList.get(i).getMovie_title() %></td>
 	</tr>
 
 	<%	} %>

@@ -1,81 +1,81 @@
 package dto;
 
 public class Member {
-	
-	private String userId;
-	private String userPw;
-	private String userName;
-	private String userBirth;
-	private String userEmail;
-	private String userPhone;
-	
+
+	private String user_id;
+	private String user_pw;
+	private String user_name;
+	private String user_birth;
+	private String user_email;
+	private String user_phone;
+
 	public Member() {}
 
-	public Member(String userId, String userPw, String userName, String userBirth, String userEmail, String userPhone) {
+	public Member(String user_id, String user_pw, String user_name, String user_birth, String user_email, String user_phone) {
 		super();
-		this.userId = userId;
-		this.userPw = userPw;
-		this.userName = userName;
-		this.userBirth = userBirth;
-		this.userEmail = userEmail;
-		this.userPhone = userPhone;
+		this.user_id = user_id;
+		this.user_pw = user_pw;
+		this.user_name = user_name;
+		this.user_birth = user_birth;
+		this.user_email = user_email;
+		this.user_phone = user_phone;
 	}
 
+	
 	@Override
 	public String toString() {
-		return "Member [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userBirth=" + userBirth
-				+ ", userEmail=" + userEmail + ", userPhone=" + userPhone + "]";
+		return "Member [user_id=" + user_id + ", user_pw=" + user_pw + ", user_name=" + user_name + ", user_birth=" + user_birth
+				+ ", user_email=" + user_email + ", phone=" + user_phone + "]";
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUser_id() {
+		return user_id;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
-	public String getUserPw() {
-		return userPw;
+	public String getUser_pw() {
+		return user_pw;
 	}
 
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
+	public void setUser_pw(String user_pw) {
+		this.user_pw = user_pw;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
-	public String getUserBirth() {
-		return userBirth;
+	public String getUser_birth() {
+		return user_birth;
 	}
 
-	public void setUserBirth(String userBirth) {
-		this.userBirth = userBirth;
+	public void setUser_birth(String user_birth) {
+		this.user_birth = user_birth;
 	}
 
-	public String getUserEmail() {
-		return userEmail;
+	public String getUser_email() {
+		return user_email;
 	}
 
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
 	}
 
-	public String getUserPhone() {
-		return userPhone;
+	public String getUser_phone() {
+		return user_phone;
 	}
 
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
+	public void setUser_phone(String user_phone) {
+		this.user_phone = user_phone;
 	}
-	
-	
-	
+
+
 
 }

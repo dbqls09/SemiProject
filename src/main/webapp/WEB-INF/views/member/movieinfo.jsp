@@ -58,13 +58,16 @@
 <br>
 
 //비로그인 시
-<% if (session.getAttribute("login") == null { %>
+<% if (session.getAttribute("login") == null) { %>
+<form action="/main" method="post">
+<script>
+   window.alert('로그인 후 이용해주세요');
+   window.location.href='/main/login';
+</script>
+</form>
 
-<% } %>
-
-//로그인 시
-<%	else if( session.getAttribute("login") != null && (boolean) session.getAttribute("login"))  { %> 
-<form action="" method="post" >
+<% } else if( session.getAttribute("login") != null && (boolean) session.getAttribute("login"))  { %> 
+<form action="/reservation" method="post" >
 
 <div class="movie">
 	<div class="photo">

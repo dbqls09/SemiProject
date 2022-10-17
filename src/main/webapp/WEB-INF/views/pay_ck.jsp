@@ -78,7 +78,6 @@
 		<div class="body1">
 			<div class="text1">
 				<a>예매정보</a>
-				<button class="recancel">예매취소</button>
 			</div>
 		</div>
 	</div>
@@ -99,7 +98,7 @@
 				<a>날짜: 10월 20일</a><br><br>
 				<a>좌석: A7</a><br><br>
 				<a>결제: 14,000원</a><br><br>
-				<button class="btn">홈으로</button>
+				<button class="btn" onclick="location.href='<%=request.getContextPath() %>/main'">홈으로</button>
 			</span>
 		</div>
 	</div>
