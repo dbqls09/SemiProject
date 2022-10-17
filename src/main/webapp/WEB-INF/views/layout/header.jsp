@@ -6,6 +6,14 @@
 <meta charset="UTF-8">
 <title>KLC📽️INEMA</title>
 
+<!-- 부트스트랩 3 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<!-- icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <link rel="stylesheet" href="resources/footer.css" type="text/css">
 
 <style type="text/css">
@@ -52,7 +60,7 @@
 	font-size: 40px;
 	font-weight: bold;
 	color: rgb(255, 250, 240);
-/* 	border-bottom : 1px solid rgb(144, 144, 144); */
+/*  	border-bottom : 1px solid rgb(144, 144, 144);  */
 }
 
 .title1 {
@@ -104,7 +112,8 @@ img {
 </style>
 </head>
 
-<body bgcolor="#050040">
+<body style = "background-color: #050040; !important">
+
 	<div class="nav">
 <!-- 		<div class="title">KLC📽️INEMA</div> -->
 

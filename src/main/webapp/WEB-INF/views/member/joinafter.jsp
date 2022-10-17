@@ -10,10 +10,15 @@
 </head>
 <body>
 
-<% if (session.getAttribute("login") == null) { %>
-alrt('로그인 실패\n로그인 페이지로 이동합니다.');
-location.href="/main/login"
-<% } %>
+<%
+int result = (int)request.getAttribute("result"); 
+String msg = result>0? "회원 가입 성공" : "회원 가입 실패 ㅜ";
+%>
+
+<script>
+window.alert('<%=msg%>');
+window.location.href='/main';
+</script>
 
 </body>
 </html>

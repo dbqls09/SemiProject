@@ -4,8 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import dto.Member;
 
-import dto.Member;
-
 public interface MemberService {
 
 	/**
@@ -49,7 +47,47 @@ public interface MemberService {
 	 * 
 	 * @param member - 회원가입 정보 객체
 	 */
-	public void join(Member member);
+	public int join(Member member);
+	
+	
+//	/**
+//	 * 정보 수정 처리
+//	 * 
+//	 * @param conn - DB연결 객체
+//	 * @param member - 조회할 회원 정보
+//	 * @return Member - 조회된 회원 정보
+//	 * 
+//	 */
+//	
+	
+	// 회원 정보 조회(?)
+	public Member view(Member user_id);
+	
+	// 회원 정보 수정
+	public void update(HttpServletRequest req);
+	
+	/**
+	 * 
+	 * @param member - 삭제할 정보 객체
+	 */
+	// 회원 탈퇴 ( 정보 삭제 )
+	public void delete(HttpServletRequest req);
+
+//	// reservation에 넘겨줄 아이디 찾아오기
+//	public Member getuser_id(HttpServletRequest req);
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 	}

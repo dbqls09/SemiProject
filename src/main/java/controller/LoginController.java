@@ -27,9 +27,8 @@ public class LoginController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("/WEB-INF/views/member/login.jsp").forward(req, resp);
-
-
 	}
+
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -55,7 +54,8 @@ public class LoginController extends HttpServlet {
 
 			//로그인 사용자 정보 조회
 			member = memberService.info(member);
-System.out.println("LoginController :: " + member);
+			System.out.println("LoginController :: " + member);
+			
 			//세선 정보 객체
 			HttpSession session = req.getSession();
 
@@ -63,9 +63,9 @@ System.out.println("LoginController :: " + member);
 			session.setAttribute("user_id", member.getUser_id());
 			session.setAttribute("user_pw", member.getUser_pw());
 			session.setAttribute("user_name", member.getUser_name());
-//			session.setAttribute("user_birth", member.getUser_birth());
-//			session.setAttribute("user_email", member.getUser_email());
-//			session.setAttribute("user_phone", member.getUser_phone());
+			session.setAttribute("user_birth", member.getUser_birth());
+			session.setAttribute("user_email", member.getUser_email());
+			session.setAttribute("user_phone", member.getUser_phone());
 		}
 
 		//로그인 성공 페이지로 리다이렉트
@@ -78,13 +78,7 @@ System.out.println("LoginController :: " + member);
 		
 		System.out.println(req.getParameterValues("member"));
 
+
 	}
-//	} else {
-//		
-//		resp.sendRedirect("/main/login/fail");
-//	}
-
 	
-
-
 }

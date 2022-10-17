@@ -77,18 +77,78 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	@Override
-	public void join(Member member) {
+    public int join(Member member) {
+
+        Connection conn = JDBCTemplate.getConnection();
+
+        if( memberDao.insert(conn,member) > 0) {
+            JDBCTemplate.commit(conn);
+            return 1;
+
+        } else {
+            JDBCTemplate.rollback(conn);
+            return -1;
+
+        }
+    }
+	
+	// 회원 정보 수정!
+	@Override
+	public void update(HttpServletRequest req) {
+
+		Member member = new Member();
+
+		member.setUser_id(req.getParameter("user_id"));
+		member.setUser_pw(req.getParameter("user_pw"));
+		member.setUser_name(req.getParameter("user_name"));
+		member.setUser_birth(req.getParameter("user_birth"));
+		member.setUser_email(req.getParameter("user_email"));
+		member.setUser_phone(req.getParameter("user_phone"));
 		
 		Connection conn = JDBCTemplate.getConnection();
-		
-		if( memberDao.insert(conn,member) > 0) {
+						
+		if( memberDao.update(conn, member) > 0 ) {
 			JDBCTemplate.commit(conn);
-			
 		} else {
 			JDBCTemplate.rollback(conn);
-			
 		}
 	}
+
+	@Override
+	public Member view(Member userid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	//회원 탈퇴
+	@Override
+	public void delete(HttpServletRequest req) {
+		
+		Member member = new Member();
+
+		member.setUser_id(req.getParameter("user_id"));
+		member.setUser_pw(req.getParameter("user_pw"));
+		member.setUser_name(req.getParameter("user_name"));
+		member.setUser_birth(req.getParameter("user_birth"));
+		member.setUser_email(req.getParameter("user_email"));
+		member.setUser_phone(req.getParameter("user_phone"));
+		
+		Connection conn = JDBCTemplate.getConnection();
+						
+		if( memberDao.update(conn, member) > 0 ) {
+			JDBCTemplate.commit(conn);
+		} else {
+			JDBCTemplate.rollback(conn);
+		}
+	}
+
+//	@Override
+//	public Member getuser_id(HttpServletRequest req) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+	
+	
 
 
 }

@@ -1,6 +1,9 @@
 package dao.face;
 
 import java.sql.Connection;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import dto.Member;
 
@@ -31,13 +34,40 @@ public interface MemberDao {
 
 	public int insert(Connection conn, Member param);
 	
-
-	
-
-//	int selectCntMemberByUser_idUser_pw(Connection conn, Member member);
-	
-	
 	public int joinIdCheck(String user_id);
+	
+	
+	
+//	/**
+//	 * 테이블 전체 조회
+//	 * 
+//	 * @param conn - DB연결 객체
+//	 * @return - List<Member>
+//	 * 
+//	 */
+//	
+//	public List<Member> selectAll(Connection conn, Member member);
+//	
+	//회원 정보 수정
+	public int update(Connection conn, Member member);
+	
+	//회원 삭제
+	public int delete(Connection conn, Member member);
+	
+	
+	//영화 정보
+	public Member movieinfo(Connection conn, Member member);
+
+	
+    public Member movieSelect(Connection conn, Member member);
+
+	public Member getMovie(HttpServletRequest req);
+	
+	
+	
+	
+	
+	
 	
 
 	
