@@ -43,7 +43,7 @@
 }
 
 .info {
-	position: relative;
+	position: absolute;
     min-height: 350px;
     margin: 0px;
     padding: 15px;
@@ -86,7 +86,17 @@ table span {
 <script type="text/javascript">
 
 function payck() {
-	alert("결제 완료 되었습니다");
+	
+	 var pay = document.getElementsByName("payment");
+	 
+	 for(var i=0; i<pay.length; i++){
+	  if (pay[i].checked){
+	   alert(pay[i].value + " 결제 완료 되었습니다!")
+	   break;
+	  }
+	 }
+	
+// 	alert("결제 완료 되었습니다");
 	window.location.href = "<%=request.getContextPath() %>/pay_ck";
 }
 
@@ -128,10 +138,10 @@ function payck() {
 <table class="payment-table">
 
 <tr>
-<td><input type="radio" name="payment" value="card"><span>카드</span></td>
-<td><input type="radio" name="payment" value="phone"><span>휴대폰 결제</span>></td>
-<td><input type="radio" name="payment" value="easypay"><span>간편 결제</span>></td>
-<td><input type="radio" name="payment" value="bankbook"><span>무통장 입금</span>></td>
+<td><input type="radio" name="payment" value="카드"><span>카드</span></td>
+<td><input type="radio" name="payment" value="휴대폰"><span>휴대폰 결제</span>></td>
+<td><input type="radio" name="payment" value="간편"><span>간편 결제</span>></td>
+<td><input type="radio" name="payment" value="무통장 입금"><span>무통장 입금</span>></td>
 </tr>
 
 <tr>
@@ -153,14 +163,18 @@ function payck() {
 		
 		
 			<div class="info">
+			<div class="img">
+			<img src="/imgs/444.png" style="height: 230px;">
+			</div>
 			<span>해리포터와 마법사의 돌</span><br><br>
 			<span>극장: 강남점</span><br><br>
-			<span>날짜: 10월 20일</span>
+			<span>날짜: 10월 20일</span><br><br>
+			<span>좌석: <%=seat %></span><br>
 			</div>
 			
-			<div style="padding-left: 15px; ">
-			<%=seat %>
-			</div>
+<!-- 			<div style="padding-left: 15px; "> -->
+<%-- 			<%=seat %> --%>
+<!-- 			</div> -->
 <!-- 			<span id='result' style="color: #6feaf6;"></span> -->
 			
 			<div class="btn-group">

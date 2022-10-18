@@ -66,10 +66,10 @@
 }
 
 .seatchk {
-    background-color: #444;
+    background-color: #696969;
     border-radius: 1em;
     width: 234px;
-    padding: 5px;
+    padding: 50px;
     margin-top: 60px;
     margin-left: 500px;
 }
@@ -146,6 +146,9 @@ function getCheckboxValue()  {
 		<div class="payment-total">
 		
 			<div class="info">
+			<div class="img">
+			<img src="/imgs/444.png" style="height: 230px;">
+			</div>
 			<span>해리포터와 마법사의 돌</span><br><br>
 			<span>극장: 강남점</span><br><br>
 			<span>날짜: 10월 20일</span>
