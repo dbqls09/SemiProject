@@ -66,6 +66,8 @@
 .movie {
 	display: flex;
 /* 	margin: 100px; */
+	margin-top: 20px;
+	margin-bottom: 40px;
 }
 
 .movie-item {
@@ -96,7 +98,9 @@
 }
 
 .box-whole{
-	margin: 30px;
+	margin: 50px;
+/* 	margin-bottom: 20px; */
+	
 }
 
 #btn1 {
@@ -156,20 +160,21 @@ img {
 			<%
 			if (session.getAttribute("login") != null && (boolean) session.getAttribute("login")) {
 			%>
-			<a class="nav-item"><%=session.getAttribute("user_name")%>님,
-				환영합니다.</a><br> <a class="nav-item" href="/main/logout">로그아웃</a>
+			<a class="nav-item"><%=session.getAttribute("user_name")%>님, 환영합니다.</a><br> 
+			<a class="nav-item" href="/main/logout">로그아웃</a>
+			<a class="nav-item" href="./mypage">마이페이지</a>
 
 			<%-- 비로그인 시 --%>
 			<%} else if (session.getAttribute("login") == null) {%>
-			<a class="nav-item" href="./main/login">로그인</a> <a class="nav-item"
-				href="./main/agreement">회원가입</a>
+			<a class="nav-item" href="./main/login">로그인</a> 
+			<a class="nav-item" href="./main/agreement">회원가입</a>
 			<%
 			}
 			%>
 
-			<a class="nav-item" href="./mypage">마이페이지</a> <a class="nav-item"
-				href="/customer">고객센터</a> <a class="nav-item" href="#"
-				style="border-right: none;">빠른예매</a>
+<!-- 			<a class="nav-item" href="./mypage">마이페이지</a>  -->
+			<a class="nav-item" href="/customer">고객센터</a> 
+			<a class="nav-item" href="#" style="border-right: none;">빠른예매</a>
 			<!-- 			<a class="nav-item"><button onclick="location.href='/main/join'">회원가입</button> </a> -->
 		</div>
 

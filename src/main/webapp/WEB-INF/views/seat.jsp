@@ -78,13 +78,22 @@
 <script type="text/javascript">
 
 function getCheckboxValue()  {
-	
-	  // 선택된 목록 가져오기
-	  const query = 'input[name="seat"]:checked';
-	  const selectedEls = 
-	      document.querySelectorAll(query);
-	  
-	}
+	   
+    // 선택된 목록 가져오기
+    const query = 'input[name="seat"]:checked';
+    const selectedEls = 
+        document.querySelectorAll(query);
+    
+    // 선택된 목록에서 value 찾기
+    let result = '';
+    selectedEls.forEach((el) => {
+      result += el.value + ' ';
+    });
+    
+    // 출력
+    document.getElementById('result').innerText
+      = result;
+  }
 	
 
 </script>
@@ -151,10 +160,9 @@ function getCheckboxValue()  {
 			</div>
 			<span>해리포터와 마법사의 돌</span><br><br>
 			<span>극장: 강남점</span><br><br>
-			<span>날짜: 10월 20일</span>
-			</div>
-		
+			<span>날짜: 10월 20일</span><br><br>
 			<span id='result'></span>
+			</div>
 			
 			<div class="btn-group">
 			<button type ="submit" class="btn">예매</button>

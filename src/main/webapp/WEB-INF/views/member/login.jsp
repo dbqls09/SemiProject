@@ -172,7 +172,7 @@ span {
    
       <div class="name">
          <div class="pw" style="float: left;">비밀번호</div>
-         <input type="text" name="user_pw" id="user_pw" style="width:200px;">
+         <input type=text" name="user_pw" id="user_pw" style="width:200px;">
       </div>
    </div>
    

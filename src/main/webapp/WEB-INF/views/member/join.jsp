@@ -221,11 +221,11 @@ body {
       	
       
       <div class="textForm">
-        <input id="user_pw" name="user_pw" type="password" class="user_pw" placeholder="비밀번호">
+        <input id="user_pw" name="user_pw" type="text" class="user_pw" placeholder="비밀번호">
       </div>
       
       <div class="textForm">
-        <input id="user_pwcheck" name="user_pwcheck" type="password" class="user_pwcheck" placeholder="비밀번호확인">
+        <input id="user_pwcheck" name="user_pwcheck" type="text" class="user_pwcheck" placeholder="비밀번호확인">
       </div>
       
       <div class="textForm">

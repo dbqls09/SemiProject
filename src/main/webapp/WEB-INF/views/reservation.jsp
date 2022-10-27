@@ -111,7 +111,7 @@ menuEvent.addEventListener("mouseout", function(event){
 	<%	for(int i=0; i<movieList.size(); i++) { %>
 	
 	<tr>
-		<td bgcolor="#f5f5f5" color="#696969" onmouseover="this.style.background='#696969', this.style.color='#fff'" onmouseout="this.style.background='#f5f5f5', this.style.color='#696969'" style="padding-left: 10px;"><%=movieList.get(i).getMovie_age() %> <%=movieList.get(i).getMovie_title() %></td>
+		<td bgcolor="#f5f5f5" color="#696969" onmouseover="this.style.background='#696969', this.style.color='#fff'" onclick="this.style.background='#696969'" onmouseout="this.style.background='#f5f5f5', this.style.color='#696969'" style="padding-left: 10px;"><%=movieList.get(i).getMovie_age() %> <%=movieList.get(i).getMovie_title() %></td>
 	</tr>
 
 	<%	} %>
